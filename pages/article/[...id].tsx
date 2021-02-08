@@ -34,8 +34,8 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
         </div>
         <MDX></MDX>
         <div className="shareOnTwitter">
-          <a href={encodeURI(`https://twitter.com/share?url=${defaults.baseUrl}/article/${resourceId}&text=${title}&via=${defaults.twitterUserName || defaults.userName}`)
-          } target="_blank" rel="noopener noreferrer">Share Article</a>
+          <em>Share Article:</em>&nbsp;<a href={encodeURI(`https://twitter.com/share?url=${defaults.baseUrl}/article/${resourceId}&text=${title}&via=${defaults.twitterUserName || defaults.userName}`)
+          } target="_blank" rel="noopener noreferrer">Twitter</a>
         </div>
       </Wrapper>
     </React.Fragment>
@@ -54,6 +54,13 @@ const Wrapper = styled.article`
     svg:first-of-type {
       margin-right: 0.5em;
     }
+  }
+  .shareOnTwitter {
+
+    display: flex;
+    justify-content: flex-end;
+    margin: 1em 0;
+    padding: .5em;
   }
 `;
 

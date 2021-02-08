@@ -94,10 +94,6 @@ export default styled(PostList)`
     text-align: left;
     margin: 0 auto;
     margin-bottom: 4rem;
-    min-height: 600px;
-
-    > :not(:last-of-type) {
-      border-bottom: 1px solid var(--clr-grey);
-    }
+    min-height: 42em;
   }
 `;

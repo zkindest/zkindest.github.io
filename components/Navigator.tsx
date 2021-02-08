@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ActiveLink from "@/components/ActiveLink";
+import Link from "next/link";
 
 //pageName should be /{name};
 
@@ -24,14 +24,14 @@ const Navigator: React.FC<NavigatorProps> = ({
   return (
     <div className={`${className} navigator`}>
       {!isFirst && (
-        <ActiveLink href={prevPage}>
-          <a className="navigator__prev">&lArr; Newer</a>
-        </ActiveLink>
+        <Link href={prevPage}>
+          <a >&lArr; Newer</a>
+        </Link>
       )}
       {!isLast && (
-        <ActiveLink href={nextPage}>
-          <a className="navigator__next">Previous &rArr;</a>
-        </ActiveLink>
+        <Link href={nextPage}>
+          <a >Previous &rArr;</a>
+        </Link>
       )}
     </div>
   );
@@ -41,21 +41,7 @@ export default styled(Navigator)`
   text-align: center;
   margin-top: 2em;
 
-  .navigator {
-    &__prev,
-    &__next {
-      font-weight: 400;
-      margin: 0.5rem;
-      padding: 1rem 0.5rem;
-    }
-    &__link {
-      margin: 0 0.5rem;
-      padding: 1rem 1.5rem;
-      border-radius: 6px;
-    }
-    &__active {
-      background-color: #111;
-      color: var(--clr-green-light);
-    }
+  a + a {
+    margin-left: .5rem;
   }
 `;

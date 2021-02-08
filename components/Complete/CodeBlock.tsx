@@ -1,6 +1,6 @@
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/vsDark";
+import vsDarkTheme from "prism-react-renderer/themes/vsDark";
 import styled from "styled-components";
 import rangeParser from "parse-numeric-range";
 
@@ -29,38 +29,41 @@ const PrismWrapper: React.FC<any> = (props) => {
       {...defaultProps}
       code={props.children.props.children.trim()}
       language={language}
-      theme={theme}
+      theme={vsDarkTheme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
         return (
           <Container>
-            <Pre className={className} style={style}>
-              {/* TO DO */}
-              {/* <div className="code-tab">{language}</div> */}
-              {tokens.map((line, i) => {
-                const lineProps = getLineProps({
-                  line,
-                  key: i,
-                });
-                if (shouldHighlightLine(i)) {
-                  lineProps.className = `${lineProps.className} highlight-line`;
-                }
-                return (
-                  <Line {...lineProps}>
-                    <LineContent>
-                      {line.map((token, key) => (
-                        <span
-                          {...getTokenProps({
-                            token,
-                            key,
-                          })}
-                        />
-                      ))}
-                    </LineContent>
-                  </Line>
-                );
-              })}
-            </Pre>
+            <Lang>{language}</Lang>
+            <PreContainer>
+              <Pre className={className} style={style}>
+                {/* TO DO */}
+                {tokens.map((line, i) => {
+                  const lineProps = getLineProps({
+                    line,
+                    key: i,
+                  });
+                  if (shouldHighlightLine(i)) {
+                    lineProps.className = `${lineProps.className} highlight-line`;
+                  }
+                  return (
+                    <Line {...lineProps}>
+                      <LineNo>{i + 1}</LineNo>
+                      <LineContent>
+                        {line.map((token, key) => (
+                          <span
+                            {...getTokenProps({
+                              token,
+                              key,
+                            })}
+                          />
+                        ))}
+                      </LineContent>
+                    </Line>
+                  );
+                })}
+              </Pre>
+            </PreContainer>
           </Container>
         );
       }}
@@ -82,25 +85,12 @@ const Pre = styled.pre`
   white-space: pre;
   word-break: normal;
   min-width: 100%;
+  max-height: 30em;
   float: left;
   overflow: initial;
 
   .token-line {
     line-height: 1.5;
-  }
-  .code-tab {
-    position: absolute;
-    top: 0;
-    right: 5%;
-    color: rgb(156, 220, 254);
-    font-size: 1em;
-    font-weight: 700;
-    transform: translateY(-100%);
-    text-transform: uppercase;
-    padding: 0.05rem 0.85rem 0;
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
-    background: #1e1e1e;
   }
   .highlight-line {
     background-color: rgb(53, 59, 69);
@@ -115,19 +105,33 @@ const Pre = styled.pre`
 const Line = styled.div`
   display: table;
 `;
-/* const LineNo = styled.span`
+const LineNo = styled.span`
   display: table-cell;
   text-align: right;
   padding-right: 1em;
   user-select: none;
   opacity: 0.5;
-`; */
+`;
 
 const LineContent = styled.span`
   display: table-cell;
 `;
 
-const Container = styled.article`
+const Lang = styled.div`
+    position: absolute;
+    top: 0;
+    right: 5%;
+    color: rgb(156, 220, 254);
+    font-size: 1em;
+    font-weight: 700;
+    transform: translateY(-100%);
+    text-transform: uppercase;
+    padding: 0.05rem 0.85rem 0;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    background: #1e1e1e;
+  `;
+const PreContainer = styled.article`
   background-color: #1d1f21;
   position: relative;
   overflow: auto;
@@ -135,6 +139,9 @@ const Container = styled.article`
   padding: 1.1em;
   border-radius: var(--radius);
   margin: 2em 0;
-  font-size: 0.8em;
+  font-size: 1em;
 `;
+const Container = styled.div`
+  position: relative;
+`
 export default PrismWrapper;

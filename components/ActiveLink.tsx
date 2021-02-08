@@ -6,17 +6,17 @@ interface ActiveLinkProps {
   href: string;
 }
 const ActiveLink: React.FC<ActiveLinkProps> = ({ children, href }) => {
-  const router = useRouter()
-  const className = router.asPath === href ? 'active' : 'not-active';
-
-  const handleClick = (e: any) => {
-    e.preventDefault()
-
-    window.innerWidth <= 648 ? router.replace(href) : router.push(href)
+  const router = useRouter();
+  let className;
+  if (href.startsWith('/articles/')) {
+    className = router.asPath.startsWith('/articles/') && href.startsWith('/articles/') ? 'active' : 'not-active';
+  }
+  else {
+    className = router.asPath === href ? 'active' : 'not-active';
   }
 
   return (
-    <a href={href} onClick={handleClick} className={className}>
+    <a href={href} className={className}>
       {children}
     </a>
   )

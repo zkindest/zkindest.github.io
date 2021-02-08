@@ -1,4 +1,4 @@
-import { Blockquote, Code, Headings, PrismSetup } from "@/components/Complete";
+import { Blockquote, Code, Headings, CodeBlock } from "@/components/Complete";
 import Layout from "@/components/Layout";
 import { ThemeProvider } from "@/lib/ThemeContext";
 import { Components, MDXProvider } from "@mdx-js/react";
@@ -11,7 +11,7 @@ const components: Components = {
   h4: Headings.myH4,
   inlineCode: Code,
   blockquote: Blockquote,
-  pre: PrismSetup,
+  pre: CodeBlock,
 };
 
 class MyApp extends App {

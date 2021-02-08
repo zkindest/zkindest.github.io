@@ -58,9 +58,9 @@ const Wrapper = styled.blockquote`
 
     .icon {
       position: absolute;
-      top: 0;
-      left: -3px;
-      background: var(--clr-grey-lightest);
+      top: 15px;
+      left: 5px;
+      background: var(--clr-background);
       transform: translate(-50%, -50%);
       width: 40px;
       height: 40px;
@@ -72,8 +72,8 @@ const Wrapper = styled.blockquote`
 
   .info {
     background: var(--clr-purple-lightest);
-    color: var(--clr-primary-1);
-    border-color: var(--clr-violet-5);
+    color: #513c06;
+    border-left: 6px solid var(--clr-violet-5);
     .icon {
       color: var(--clr-violet-5);
     }
@@ -81,8 +81,9 @@ const Wrapper = styled.blockquote`
   .warning {
     background: #fffaeb;
     color: #513c06;
-    border-color: #f7d070;
+    border-left: 6px solid #f7d070;
     .icon {
+      left: 2px;
       color: #f7d070;
     }
   }
