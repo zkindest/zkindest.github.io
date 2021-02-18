@@ -7,7 +7,7 @@
     "start": "next start",
     "server": "yarn build && NODE_ENV=production node server.js",
     "format": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\"",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "publish": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll gh-pages --dotfiles=true --dist out/"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.5.1",

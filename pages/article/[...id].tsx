@@ -20,23 +20,25 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
   const MDX = dynamic(() => import(`../../posts/${resourceId}.mdx`), {
     loading: () => <p style={{ textAlign: "center" }}>Loading...</p>,
   });
-  useEffect(() => {
+  useEffect(function addUtterance() {
     const scriptEl = document.createElement("script");
     const postWrapperEl = document.querySelector('.post__wrapper')
 
     scriptEl.setAttribute("src", "https://utteranc.es/client.js")
     scriptEl.setAttribute("crossorigin", "anonymous");
-    scriptEl.setAttribute("async", 'true');
+    scriptEl.setAttribute("async", "true");
     scriptEl.setAttribute("repo", "afroz1198/afroz1198.github.io");
-    scriptEl.setAttribute("issue-term", "pathname");
+    scriptEl.setAttribute("issue-term", "title");
+    scriptEl.setAttribute("theme", "github-light");
+    scriptEl.setAttribute("branch", "main")
 
     postWrapperEl && postWrapperEl.appendChild(scriptEl);
 
-  })
+  }, [])
   return (
     <React.Fragment>
       <ErrorBoundary>
-        <SEO title={title} description={description} image={image} />
+        <SEO title={title} description={description} image={image} path={process.env.NODE_ENV === "development" ? `http://localhost:3000/article/${resourceId}` : `http://afroz1198.github.io/article/${resourceId}`} />
         <Wrapper className="post__wrapper">
           <div>
             <h1>{title}</h1>

@@ -36,3 +36,4 @@ yarn-error.log*
 pages/projects
 components/Projects
 try
+out/

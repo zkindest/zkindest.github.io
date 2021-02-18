@@ -101,10 +101,6 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#90cdf4" />
           <meta name="apple-mobile-web-app-status-bar" content="#90cdf4" />
 
-          {/* https://web.dev/canonical/?utm_source=lighthouse&utm_medium=devtools */}
-          <link rel="canonical" href="http://afroz1198.github.io/" />
-
-
         </Head>
         <body>
           <MagicScriptTag />
