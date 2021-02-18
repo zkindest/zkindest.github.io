@@ -2,7 +2,7 @@ export default {
   title: `Afz`,
   shortName: `Afroz`,
   subtitle: `Web Developer`,
-  description: `I'm Afroz.Frontend Developer at a Consultancy firm in Hyderabad(India), I build Products with Typescript-React, Node, Rust and Python`,
+  description: `I'm Afroz.I build Products with Typescript-React, Node, Rust and Python.`,
   author: `Afroz Mohammad`,
   userName: `afroz1198`, //default for all
   mail: `mohammedafroz.1198@gmail.com`,

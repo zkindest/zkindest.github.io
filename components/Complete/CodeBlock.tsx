@@ -34,10 +34,8 @@ const PrismWrapper: React.FC<any> = (props) => {
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
         return (
           <Container>
-            <Lang>{language}</Lang>
             <PreContainer>
               <Pre className={className} style={style}>
-                {/* TO DO */}
                 {tokens.map((line, i) => {
                   const lineProps = getLineProps({
                     line,
@@ -48,7 +46,6 @@ const PrismWrapper: React.FC<any> = (props) => {
                   }
                   return (
                     <Line {...lineProps}>
-                      <LineNo>{i + 1}</LineNo>
                       <LineContent>
                         {line.map((token, key) => (
                           <span
@@ -76,8 +73,7 @@ const Pre = styled.pre`
   margin: 0;
   padding: 0;
   background-color: transparent;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  font-family: "Courier New", Courier, monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   line-height: 1.5;
   hyphens: none;
   word-spacing: normal;
@@ -85,7 +81,6 @@ const Pre = styled.pre`
   white-space: pre;
   word-break: normal;
   min-width: 100%;
-  max-height: 30em;
   float: left;
   overflow: initial;
 
@@ -105,37 +100,15 @@ const Pre = styled.pre`
 const Line = styled.div`
   display: table;
 `;
-const LineNo = styled.span`
-  display: table-cell;
-  text-align: right;
-  padding-right: 1em;
-  user-select: none;
-  opacity: 0.5;
-`;
 
 const LineContent = styled.span`
   display: table-cell;
 `;
 
-const Lang = styled.div`
-    position: absolute;
-    top: 0;
-    right: 5%;
-    color: rgb(156, 220, 254);
-    font-size: 1em;
-    font-weight: 700;
-    transform: translateY(-100%);
-    text-transform: uppercase;
-    padding: 0.05rem 0.85rem 0;
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
-    background: #1e1e1e;
-  `;
 const PreContainer = styled.article`
   background-color: #1d1f21;
   position: relative;
   overflow: auto;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
   padding: 1.1em;
   border-radius: var(--radius);
   margin: 2em 0;

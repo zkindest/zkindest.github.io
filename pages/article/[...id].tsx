@@ -7,6 +7,8 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { MdDateRange } from "react-icons/md";
 import styled from "styled-components";
 import defaults from "@/config";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import { useEffect } from "react";
 
 interface PostProps {
   resourceId: string;
@@ -16,28 +18,43 @@ interface PostProps {
 const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
   const { title, description, image, date, time_to_read } = frontMatter;
   const MDX = dynamic(() => import(`../../posts/${resourceId}.mdx`), {
-    loading: () => <p>Loading...</p>,
+    loading: () => <p style={{ textAlign: "center" }}>Loading...</p>,
   });
+  useEffect(() => {
+    const scriptEl = document.createElement("script");
+    const postWrapperEl = document.querySelector('.post__wrapper')
+
+    scriptEl.setAttribute("src", "https://utteranc.es/client.js")
+    scriptEl.setAttribute("crossorigin", "anonymous");
+    scriptEl.setAttribute("async", 'true');
+    scriptEl.setAttribute("repo", "afroz1198/afroz1198.github.io");
+    scriptEl.setAttribute("issue-term", "pathname");
+
+    postWrapperEl && postWrapperEl.appendChild(scriptEl);
+
+  })
   return (
     <React.Fragment>
-      <SEO title={title} description={description} image={image} />
-      <Wrapper>
-        <div>
-          <h1>{title}</h1>
-          <span className="post__info">
-            <AiOutlineClockCircle />
-            {time_to_read ? `${time_to_read} read` : null}
-            <MdDateRange />
-            {date}
-          </span>
-          <div className="underline" />
-        </div>
-        <MDX></MDX>
-        <div className="shareOnTwitter">
-          <em>Share Article:</em>&nbsp;<a href={encodeURI(`https://twitter.com/share?url=${defaults.baseUrl}/article/${resourceId}&text=${title}&via=${defaults.twitterUserName || defaults.userName}`)
-          } target="_blank" rel="noopener noreferrer">Twitter</a>
-        </div>
-      </Wrapper>
+      <ErrorBoundary>
+        <SEO title={title} description={description} image={image} />
+        <Wrapper className="post__wrapper">
+          <div>
+            <h1>{title}</h1>
+            <span className="post__info">
+              <AiOutlineClockCircle />
+              {time_to_read ? `${time_to_read} read` : null}
+              <MdDateRange />
+              {date}
+            </span>
+            <div className="underline" />
+          </div>
+          <MDX></MDX>
+          <div className="shareOnTwitter">
+            <em>Share Article:</em>&nbsp;<a href={encodeURI(`https://twitter.com/share?url=${defaults.baseUrl}/article/${resourceId}&text=${title}&via=${defaults.twitterUserName || defaults.userName}`)
+            } target="_blank" rel="noopener noreferrer">Twitter</a>
+          </div>
+        </Wrapper>
+      </ErrorBoundary>
     </React.Fragment>
   );
 };

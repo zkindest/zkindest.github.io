@@ -33,7 +33,8 @@ const about: React.FC<AboutProps> = ({ className }) => {
           <div className="about__info">
             <p>Hi,<span role="img" aria-label="waving hand emoji">👋</span>{description}</p>
             <p className="about__info--links">
-              <i>Reach me:</i>&nbsp;
+              <a href="https://gitstalk.netlify.app/afroz1198" target="_blank"><i>stalk me</i> </a>|&nbsp;<i>reach me:</i>&nbsp;
+
               <a href={`mailto:${mail}`}>
                 <HiOutlineMail style={{ marginBottom: "-3px" }}></HiOutlineMail>&nbsp;Email
               </a>
