@@ -28,7 +28,7 @@ module.exports = withOffline({
   workboxOpts: {
   runtimeCaching: [
     {
-      urlPattern: /^https?.afroz1198*/,
+      urlPattern: /^https?.*/,
       handler: 'NetworkFirst',
       options: {
         cacheName: 'offlineCache',
