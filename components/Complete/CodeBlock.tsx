@@ -112,7 +112,7 @@ const PreContainer = styled.article`
   padding: 1.1em;
   border-radius: var(--radius);
   margin: 2em 0;
-  font-size: 1em;
+  font-size: .9em;
 `;
 const Container = styled.div`
   position: relative;

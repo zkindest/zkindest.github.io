@@ -6,7 +6,7 @@ type SEOProps = {
   description?: string;
   path?: string;
   image?: string;
-  // dataHook?: string
+  preconnectGitApi?: boolean;
 };
 
 const SEO: React.FC<SEOProps> = (props) => {
@@ -19,17 +19,18 @@ const SEO: React.FC<SEOProps> = (props) => {
     return null;
   }
 
-  //TODO
   const title = props.title || defaults.title;
   const description = props.description || defaults.description;
   const url = new URL(props.path || "", defaults.baseUrl).href;
   const image = props.image || defaults.image;
-  // const dataHook = props.dataHook || "homepage"
 
   return (
     <Head>
       <title>{title}</title>
       <link rel="canonical" href={url} />
+      {
+        props.preconnectGitApi && <link rel="preconnect" href="https://api.github.com"></link>
+      }
       <meta name="description" content={description} />
       {image && <meta name="image" content={image} />}
 

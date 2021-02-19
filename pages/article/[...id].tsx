@@ -38,7 +38,7 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
   return (
     <React.Fragment>
       <ErrorBoundary>
-        <SEO title={title} description={description} image={image} path={process.env.NODE_ENV === "development" ? `http://localhost:3000/article/${resourceId}` : `http://afroz1198.github.io/article/${resourceId}`} />
+        <SEO title={title} description={description} image={image} path={process.env.BACKEND_URL + `article/${resourceId}`} preconnectGitApi={true} />
         <Wrapper className="post__wrapper">
           <div>
             <h1>{title}</h1>
@@ -61,9 +61,6 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
   );
 };
 const Wrapper = styled.article`
-  /* width: 95vw; */
-  max-width: 75ch;
-  margin: 0 auto;
   .post__info {
     display: flex;
     align-items: center;

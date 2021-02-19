@@ -22,4 +22,21 @@ module.exports = withOffline({
 
     return config;
   },
+  env: {
+    BACKEND_URL: process.env.NODE_ENV === "development" ? `http://localhost:3000/` : `http://afroz1198.github.io/`
+  },
+  workboxOpts: {
+  runtimeCaching: [
+    {
+      urlPattern: /^https?.afroz1198*/,
+      handler: 'NetworkFirst',
+      options: {
+        cacheName: 'offlineCache',
+        expiration: {
+          maxEntries: 200
+        }
+      }
+    }
+  ]
+  }
 });
