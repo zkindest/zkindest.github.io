@@ -33,88 +33,71 @@ const PrismWrapper: React.FC<any> = (props) => {
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
         return (
-          <Container>
-            <PreContainer>
-              <Pre className={className} style={style}>
-                {tokens.map((line, i) => {
-                  const lineProps = getLineProps({
-                    line,
-                    key: i,
-                  });
-                  if (shouldHighlightLine(i)) {
-                    lineProps.className = `${lineProps.className} highlight-line`;
-                  }
-                  return (
-                    <Line {...lineProps}>
-                      <LineContent>
-                        {line.map((token, key) => (
-                          <span
-                            {...getTokenProps({
-                              token,
-                              key,
-                            })}
-                          />
-                        ))}
-                      </LineContent>
-                    </Line>
-                  );
-                })}
-              </Pre>
-            </PreContainer>
-          </Container>
+          <Pre className={className} style={style}>
+            {tokens.map((line, i) => {
+              const lineProps = getLineProps({
+                line,
+                key: i,
+              });
+              if (shouldHighlightLine(i)) {
+                lineProps.className = `${lineProps.className} highlight-line`;
+              }
+              return (
+                <Line key={i} {...lineProps}>
+                  <LineNo>{i + 1}</LineNo>
+                  <LineContent>
+                    {line.map((token, key) => (
+                      <span
+                        {...getTokenProps({
+                          token,
+                          key,
+                        })}
+                      />
+                    ))}
+                  </LineContent>
+                </Line>
+              );
+            })}
+          </Pre>
         );
       }}
     </Highlight>
   );
 };
-
-// Styling Only
 const Pre = styled.pre`
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  line-height: 1.5;
-  hyphens: none;
-  word-spacing: normal;
-  overflow-wrap: break-word;
-  white-space: pre;
-  word-break: normal;
-  min-width: 100%;
-  float: left;
-  overflow: initial;
+  text-align: left;
+  margin: 1em 0;
+  padding: 0.5em;
+  overflow-x: auto;
+  border-radius: var(--radius);
 
-  .token-line {
-    line-height: 1.5;
-  }
-  .highlight-line {
-    background-color: rgb(53, 59, 69);
-    display: block;
-    margin-right: -1em;
-    margin-left: -1em;
-    padding-right: 1em;
-    padding-left: 0.75em;
-    border-left: 0.3em solid #f99;
-  }
+   .highlight-line {
+     background-color: rgb(53, 59, 69);
+   }
+
+   
+   &::-webkit-scrollbar {
+     height: 8px;
+   }
+   &::-webkit-scrollbar-thumb {
+     background: rgba(255,255,255,.4);
+     border-radius: 4px;
+   }
 `;
+
 const Line = styled.div`
-  display: table;
+  display: table-row;
+`;
+
+const LineNo = styled.span`
+  display: table-cell;
+  text-align: right;
+  padding-right: 1em;
+  user-select: none;
+  opacity: 0.5;
 `;
 
 const LineContent = styled.span`
   display: table-cell;
 `;
-
-const PreContainer = styled.article`
-  background-color: #1d1f21;
-  position: relative;
-  overflow: auto;
-  padding: 1.1em;
-  border-radius: var(--radius);
-  margin: 2em 0;
-  font-size: .9em;
-`;
-const Container = styled.div`
-  position: relative;
-`
 export default PrismWrapper;

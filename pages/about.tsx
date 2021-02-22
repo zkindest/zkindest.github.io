@@ -26,7 +26,7 @@ const about: React.FC<AboutProps> = ({ className }) => {
       <section className={`${className} about`}>
         <article>
           <img
-            src={process.env.BACKEND_URL + "/static/images/me.jpeg"}
+            src={process.env.BACKEND_URL + "static/images/me.jpeg"}
             alt="Photo of me"
             className="about__img"
           />
