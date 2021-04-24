@@ -9,7 +9,7 @@
 ## Usage
 ### MDX
 1. All Components imported into MDX must be written in `js`.
-1. All React Statements must be separated using `\n` top and bottom.
+1. All React Statements must be separated using empty lines top and bottom.
 - ✅ 
 ```js
 import Recommend from '@/components/Recommend.js';
