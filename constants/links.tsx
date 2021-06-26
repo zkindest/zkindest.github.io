@@ -6,18 +6,24 @@ const Links: React.FC = () => {
   return (
     <React.Fragment>
       <li>
-        <ActiveLink href="/about" >
-          /about
+        <ActiveLink href="/about" activeClassName="active">
+          <a>
+            /about
+          </a>
         </ActiveLink>
       </li>
       <li>
-        <ActiveLink href="/articles/1" >
-          /articles
+        <ActiveLink href="/articles/1" activeClassName='active'>
+          <a>
+            /articles
+          </a>
         </ActiveLink>
       </li>
       <li>
-        <ActiveLink href="/tags" >
-          /tags
+        <ActiveLink href="/tags" activeClassName='active'>
+          <a >
+            /tags
+          </a>
         </ActiveLink>
       </li>
       <li>

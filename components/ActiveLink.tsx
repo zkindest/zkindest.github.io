@@ -1,25 +1,27 @@
-import { useRouter } from 'next/router'
-import { ReactNode } from 'react';
+import Link, { LinkProps } from 'next/link';
+import { useRouter } from 'next/router';
+import React, { Children, ReactElement } from 'react';
 
-interface ActiveLinkProps {
-  children: ReactNode;
-  href: string;
+interface ActiveLinkProps extends LinkProps {
+  children: ReactElement;
+  activeClassName?: string
 }
-const ActiveLink: React.FC<ActiveLinkProps> = ({ children, href }) => {
-  const router = useRouter();
-  let className;
-  if (href.startsWith('/articles/')) {
-    className = router.asPath.startsWith('/articles/') && href.startsWith('/articles/') ? 'active' : 'not-active';
-  }
-  else {
-    className = router.asPath === href ? 'active' : 'not-active';
-  }
+const ActiveLink: React.FC<ActiveLinkProps> = ({ children, activeClassName, ...props }) => {
+  const { asPath } = useRouter();
+  const child = Children.only(children);
+  const childClassName = child?.props?.className || '';
+
+  let className = asPath == props.href || asPath == props.as ? `${childClassName} ${activeClassName}`.trim() : childClassName;
 
   return (
-    <a href={href} className={className}>
-      {children}
-    </a>
+    <Link {...props}>
+      {React.cloneElement(child, {
+        className: className || null
+      })}
+    </Link>
   )
+
+
 }
 
 export default ActiveLink;
