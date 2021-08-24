@@ -5,7 +5,6 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
-import { ServerStyleSheet } from "styled-components";
 import {
   COLORS,
   COLOR_MODE_KEY,
@@ -18,9 +17,9 @@ const minify = mem(Terser.minify);
 
 function setColorsByTheme() {
   let colorMode = "light";
-  let colors = '🌈';
-  let colorModeKey = '🔑';
-  let colorModeCssProp = '⚡️';
+  let colors = "🌈";
+  let colorModeKey = "🔑";
+  let colorModeCssProp = "⚡️";
   const persistedColorPreference = window.localStorage.getItem(colorModeKey);
 
   const mql = window.matchMedia("(prefers-color-scheme: dark)");
@@ -37,18 +36,16 @@ function setColorsByTheme() {
   root.style.setProperty(colorModeCssProp, colorMode);
 
   Object.entries(colors).forEach(([name, colorByTheme]) => {
-
     const cssVarName = `--clr-${name}`;
     root.style.setProperty(cssVarName, colorByTheme[colorMode]);
-
   });
 }
 
 const MagicScriptTag = () => {
   const boundFn = String(setColorsByTheme)
     .replace("'🌈'", JSON.stringify(COLORS))
-    .replace('🔑', COLOR_MODE_KEY)
-    .replace('⚡️', INITIAL_COLOR_MODE_CSS_PROP);
+    .replace("🔑", COLOR_MODE_KEY)
+    .replace("⚡️", INITIAL_COLOR_MODE_CSS_PROP);
 
   let codeToRunOnClient = `(${boundFn})()`;
 
@@ -61,46 +58,43 @@ const MagicScriptTag = () => {
     throw new Error("Minified code is empty");
   }
 
-  return <script type="text/javascript" dangerouslySetInnerHTML={{ __html: minifyOutput.code }} />;
+  return (
+    <script
+      type="text/javascript"
+      dangerouslySetInnerHTML={{ __html: minifyOutput.code }}
+    />
+  );
 };
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
-
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        });
-
-      const initialProps = await Document.getInitialProps(ctx);
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      };
-    } finally {
-      sheet.seal();
-    }
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
   render() {
     return (
       <Html lang="en">
         <Head>
-          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+          />
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#90cdf4" />
           <meta name="apple-mobile-web-app-status-bar" content="#90cdf4" />
-
         </Head>
         <body>
           <MagicScriptTag />
