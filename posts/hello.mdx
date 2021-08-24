@@ -1,27 +1,113 @@
 ---
-title:  "Deno World"
-date:   '2020-01-28'   
-time_to_read: '21min'   
-image: 'https://i.imgur.com/n4lLzMf.jpg' 
-categories: [Machine-Learning,data-sciene]
+title: "First Post"
+date: "2021-08-24"
+time_to_read: "3min"
 author: Mohammad Afroz
-description: The ROC curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) at various threshold settings.Checkout for more....
+# image: "url"
+categories: ["Web"]
+description: about setting up this blog...
 ---
 
-# sadasd
+This website has been developed using below Technolgies:
 
+- **[Next.js](https://nextjs.org/docs)** (which is based on React,provides dynamic page routes, SSG, SSR, Font/Image/Script Optimizations and much more)
+- **React** as UI rendering Library
+- **Typescript**
+- **Styled Components** (CSS-in-JS library)
+- **gray-matter** to extract frontMatter and content from mdx files and turn it into a big long string which then parsed by mdx loader.
 
-```jsx
-const title="sdkfhdsk"
-```
-![sdsa](/static/images/gatsby-icon.png)
+  - `mdx-data-loader.js`
 
+    ```js
+    const matter = require("gray-matter");
+    const stringifyObject = require("stringify-object");
 
-import Recommend from '@/components/Recommend.js';
+    module.exports = async function (src) {
+      const callback = this.async();
+      const { content, data } = matter(src);
 
-<Recommend links={[{
-  name: 'sdf',
-  slug: 'sdfd'
-}]}></Recommend>
+      const code = `export const frontMatter = ${stringifyObject(data)}
+      
+    ${content}`;
 
-sdfhsdf
+      return callback(null, code);
+    };
+    ```
+
+- **@mdx-js/loader** is Webpack loader for MDX.
+
+  - `next.config.js`
+
+    ```js
+    module.exports = {
+      // other config
+
+      webpack: (config, { webpack, defaultLoaders }) => {
+        config.resolve.alias["@"] = path.resolve(__dirname, ".");
+        config.module.rules.push({
+          test: /\.mdx?$/,
+          use: [
+            defaultLoaders.babel,
+            "@mdx-js/loader",
+            path.join(__dirname, "./lib/mdx-data-loader"),
+          ],
+        });
+        return config;
+      },
+      // other config
+    };
+    ```
+
+  - Now I can render MDX `article/[...id].js`
+
+    ```js
+    //  @mdx-js/loader,gray-matter let's me do this
+    export default App =({resourceId}) => {
+
+      const MDX = dynamic(() => import(`../../posts/${resourceId}.mdx`)
+
+      return (<MDX />)
+    }
+
+    ```
+
+- **babel-plugin-import-glob-array** babel plugin to enable importing modules using a glob pattern.It helped me to generate list of articles and their frontMatter details which then used in `getStaticProps` function for `ArticleList` component.
+
+  - `mdx-util.js`
+
+    ```js
+    // above package combined with @mdx-js/loader,gray-matter let's me do this
+    import {
+      frontMatter as postFms,
+      _importMeta as postMetadatas,
+    } from "../posts/*.mdx";
+    ```
+
+- **next-offline** for offline caching capabilities.
+- **prism-react-renderer** for code blocks.
+- Followed this article on [How to setup DarkMode for Gatsby](https://www.joshwcomeau.com/react/dark-mode/) for dark mode setup.
+
+  - _gatsby-ssr.js_ -> _\_document.js_
+  - `_document.tsx`
+
+    ```jsx
+    export default class MyDocument extends Document {
+      static async getInitialProps(ctx: DocumentContext) {
+        const initialProps = await Document.getInitialProps(ctx);
+        return { ...initialProps };
+      }
+
+      render() {
+        return (
+          <Html lang="en">
+            <Head>/* ...metadata */</Head>
+            <body>
+              <MagicScriptTag />
+              <Main />
+              <NextScript />
+            </body>
+          </Html>
+        );
+      }
+    }
+    ```
