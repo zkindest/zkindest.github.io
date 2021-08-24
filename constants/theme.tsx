@@ -17,16 +17,16 @@ export const COLORS: {
   },
   "link-active": {
     dark: "#ccc",
-    light: "#000"
+    light: "#000",
   },
   "show-text": {
     dark: "#ddd",
-    light: "rgb(74, 85, 104)"
+    light: "rgb(74, 85, 104)",
   },
-  "link": {
+  link: {
     dark: "lightsalmon",
-    light: "darkorange"
-  }
+    light: "darkorange",
+  },
 };
 export const COLOR_MODE_KEY = "color-mode";
 export const INITIAL_COLOR_MODE_CSS_PROP = "--initial-color-mode";

@@ -22,23 +22,31 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
   });
   useEffect(function addUtterance() {
     const scriptEl = document.createElement("script");
-    const postWrapperEl = document.querySelector('.post__wrapper')
+    const postWrapperEl = document.querySelector(".post__wrapper");
 
-    scriptEl.setAttribute("src", "https://utteranc.es/client.js")
+    scriptEl.setAttribute("src", "https://utteranc.es/client.js");
     scriptEl.setAttribute("crossorigin", "anonymous");
     scriptEl.setAttribute("async", "true");
-    scriptEl.setAttribute("repo", "afroz1198/afroz1198.github.io");
+    scriptEl.setAttribute(
+      "repo",
+      `${defaults.gitUserName}/${defaults.gitRepoName}`
+    );
     scriptEl.setAttribute("issue-term", "title");
     scriptEl.setAttribute("theme", "github-light");
-    scriptEl.setAttribute("branch", "main")
+    scriptEl.setAttribute("branch", "main");
 
     postWrapperEl && postWrapperEl.appendChild(scriptEl);
-
-  }, [])
+  }, []);
   return (
     <React.Fragment>
       <ErrorBoundary>
-        <SEO title={title} description={description} image={image} path={process.env.BACKEND_URL + `article/${resourceId}`} preconnectGitApi={true} />
+        <SEO
+          title={title}
+          description={description}
+          image={image}
+          path={process.env.BACKEND_URL + `article/${resourceId}`}
+          preconnectGitApi={true}
+        />
         <Wrapper className="post__wrapper">
           <div>
             <h1>{title}</h1>
@@ -52,8 +60,20 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
           </div>
           <MDX></MDX>
           <div className="shareOnTwitter">
-            <em>Share Article:</em>&nbsp;<a href={encodeURI(`https://twitter.com/share?url=${defaults.baseUrl}/article/${resourceId}&text=${title}&via=${defaults.twitterUserName || defaults.userName}`)
-            } target="_blank" rel="noopener noreferrer">Twitter</a>
+            <em>Share Article:</em>&nbsp;
+            <a
+              href={encodeURI(
+                `https://twitter.com/share?url=${
+                  defaults.baseUrl
+                }/article/${resourceId}&text=${title}&via=${
+                  defaults.twitterUserName || defaults.userName
+                }`
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Twitter
+            </a>
           </div>
         </Wrapper>
       </ErrorBoundary>
@@ -72,11 +92,10 @@ const Wrapper = styled.article`
     }
   }
   .shareOnTwitter {
-
     display: flex;
     justify-content: flex-end;
     margin: 1em 0;
-    padding: .5em;
+    padding: 0.5em;
   }
 `;
 

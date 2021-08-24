@@ -7,23 +7,22 @@ const Links: React.FC = () => {
     <React.Fragment>
       <li>
         <ActiveLink href="/about" activeClassName="active">
-          <a>
-            /about
-          </a>
+          <a>/about</a>
         </ActiveLink>
       </li>
       <li>
-        <ActiveLink href="/articles/1" activeClassName='active'>
-          <a>
-            /articles
-          </a>
+        <ActiveLink href="/projects" activeClassName="active">
+          <a>/projects</a>
         </ActiveLink>
       </li>
       <li>
-        <ActiveLink href="/tags" activeClassName='active'>
-          <a >
-            /tags
-          </a>
+        <ActiveLink href="/articles/1" activeClassName="active">
+          <a>/articles</a>
+        </ActiveLink>
+      </li>
+      <li>
+        <ActiveLink href="/tags" activeClassName="active">
+          <a>/tags</a>
         </ActiveLink>
       </li>
       <li>

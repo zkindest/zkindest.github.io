@@ -1,7 +1,7 @@
 import React from "react";
-import { FiTwitter } from 'react-icons/fi'
-import { HiOutlineMail } from 'react-icons/hi'
-import { ImReddit } from 'react-icons/im'
+import { FiTwitter } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
+import { ImReddit } from "react-icons/im";
 import styled from "styled-components";
 import SEO from "../components/SEO";
 import defaults from "@/config";
@@ -17,7 +17,7 @@ const about: React.FC<AboutProps> = ({ className }) => {
     redditUserName,
     twitterUserName,
     description,
-    mail
+    mail,
   } = defaults;
 
   return (
@@ -31,12 +31,21 @@ const about: React.FC<AboutProps> = ({ className }) => {
             className="about__img"
           />
           <div className="about__info">
-            <p>Hi,<span role="img" aria-label="waving hand emoji">👋</span>{description}</p>
+            <p>
+              Hi,
+              <span role="img" aria-label="waving hand emoji">
+                👋
+              </span>
+              {description}
+            </p>
             <p className="about__info--links">
-              <a href="https://gitstalk.netlify.app/afroz1198" target="_blank"><i>stalk me</i> </a>|&nbsp;<i>reach me:</i>&nbsp;
-
+              <a href="https://gitstalk.netlify.app/zkindest" target="_blank">
+                <i>stalk me</i>{" "}
+              </a>
+              |&nbsp;<i>reach me:</i>&nbsp;
               <a href={`mailto:${mail}`}>
-                <HiOutlineMail style={{ marginBottom: "-3px" }}></HiOutlineMail>&nbsp;Email
+                <HiOutlineMail style={{ marginBottom: "-3px" }}></HiOutlineMail>
+                &nbsp;Email
               </a>
               {twitterId || twitterUserName ? (
                 <a
@@ -46,14 +55,17 @@ const about: React.FC<AboutProps> = ({ className }) => {
                       : `https://twitter.com/${twitterUserName}`
                   }
                 >
-                  <FiTwitter style={{ marginBottom: "-3px" }}></FiTwitter>&nbsp;Twitter
+                  <FiTwitter style={{ marginBottom: "-3px" }}></FiTwitter>
+                  &nbsp;Twitter
                 </a>
               ) : null}
               <a
-                href={`https://www.reddit.com/user/${redditUserName || userName
-                  }`}
+                href={`https://www.reddit.com/user/${
+                  redditUserName || userName
+                }`}
               >
-                <ImReddit />&nbsp;Reddit
+                <ImReddit />
+                &nbsp;Reddit
               </a>
             </p>
           </div>
@@ -84,15 +96,15 @@ export default styled(about)`
     }
 
     &__info {
-    text-align: left;
-    padding-top: 1rem;
+      text-align: left;
+      padding-top: 1rem;
 
       @media all and (max-width: 530px) {
         display: block;
       }
       &--links {
         a + a {
-          margin-left: .5em;
+          margin-left: 0.5em;
         }
       }
     }

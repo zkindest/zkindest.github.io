@@ -23,20 +23,23 @@ module.exports = withOffline({
     return config;
   },
   env: {
-    BACKEND_URL: process.env.NODE_ENV === "development" ? `http://localhost:3000/` : `http://zkindest.github.io/`
+    BACKEND_URL:
+      process.env.NODE_ENV === "development"
+        ? `http://localhost:3000/`
+        : `http://zkindest.github.io/`,
   },
   workboxOpts: {
-  runtimeCaching: [
-    {
-      urlPattern: /^https?.*/,
-      handler: 'NetworkFirst',
-      options: {
-        cacheName: 'offlineCache',
-        expiration: {
-          maxEntries: 200
-        }
-      }
-    }
-  ]
-  }
+    runtimeCaching: [
+      {
+        urlPattern: /^https?.*/,
+        handler: "NetworkFirst",
+        options: {
+          cacheName: "offlineCache",
+          expiration: {
+            maxEntries: 200,
+          },
+        },
+      },
+    ],
+  },
 });

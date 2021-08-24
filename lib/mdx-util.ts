@@ -67,10 +67,7 @@ const getPostsByCategories = async () => {
   postFms.forEach((fm, index) => {
     const absolutePath = postMetadatas[index].absolutePath;
     const relativePath = absolutePath.split(MDX_POST_ROOT).slice(-1)[0];
-    const resourceId = relativePath
-      .split(".")
-      .slice(0, -1)
-      .join(".");
+    const resourceId = relativePath.split(".").slice(0, -1).join(".");
 
     fm.categories?.forEach((category) => {
       let category_ = category.toLowerCase();

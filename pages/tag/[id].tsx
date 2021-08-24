@@ -81,7 +81,7 @@ export default styled(Tagged)`
       display: table-row;
       list-style: none;
       counter-increment: count_post 1;
-      
+
       &::before {
         content: counters(count_post, "decimal-leading-zero") ". ";
       }

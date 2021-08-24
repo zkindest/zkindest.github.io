@@ -25,12 +25,12 @@ const Navigator: React.FC<NavigatorProps> = ({
     <div className={`${className} navigator`}>
       {!isFirst && (
         <Link href={prevPage}>
-          <a >&lArr; Newer</a>
+          <a>&lArr; Newer</a>
         </Link>
       )}
       {!isLast && (
         <Link href={nextPage}>
-          <a >Previous &rArr;</a>
+          <a>Previous &rArr;</a>
         </Link>
       )}
     </div>
@@ -42,6 +42,6 @@ export default styled(Navigator)`
   margin-top: 2em;
 
   a + a {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 `;

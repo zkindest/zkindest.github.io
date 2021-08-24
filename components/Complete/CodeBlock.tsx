@@ -71,18 +71,17 @@ const Pre = styled.pre`
   overflow-x: auto;
   border-radius: var(--radius);
 
-   .highlight-line {
-     background-color: rgb(53, 59, 69);
-   }
+  .highlight-line {
+    background-color: rgb(53, 59, 69);
+  }
 
-   
-   &::-webkit-scrollbar {
-     height: 8px;
-   }
-   &::-webkit-scrollbar-thumb {
-     background: rgba(255,255,255,.4);
-     border-radius: 4px;
-   }
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+  }
 `;
 
 const Line = styled.div`

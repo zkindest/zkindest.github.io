@@ -11,18 +11,15 @@ const Post: React.FC<MDXItem> = ({ frontMatter, resourceId }) => {
       <div className="post">
         <h3>
           <Link href={`/article/${resourceId}`}>
-            <a className="post__header">
-              {title}
-            </a>
+            <a className="post__header">{title}</a>
           </Link>
         </h3>
         <Tagger categories={categories || []} />
-        <p className="post__excerpt">{description}
+        <p className="post__excerpt">
+          {description}
           <span style={{ display: "inline-block" }}>
             <Link href={`/article/${resourceId}`}>
-              <a>
-                Continue Reading&rarr;
-              </a>
+              <a>Continue Reading&rarr;</a>
             </Link>
           </span>
         </p>
@@ -42,7 +39,7 @@ const Wrapper = styled.article`
       margin: 0;
     }
     &__header {
-      padding: .2em;
+      padding: 0.2em;
       padding-left: 0;
     }
 

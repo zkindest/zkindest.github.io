@@ -14,10 +14,7 @@ const Tagger: React.FC<TaggerProps> = ({ categories, className }) => {
         return (
           <li key={index}>
             <Link href={`/tag/${category.toLowerCase()}`}>
-              <a >
-
-                #{category}
-              </a>
+              <a>#{category}</a>
             </Link>
           </li>
         );

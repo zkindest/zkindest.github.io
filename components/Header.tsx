@@ -13,7 +13,6 @@ const defaultProps = {
 };
 
 const Header: React.FC<HeaderProps> = (props) => {
-
   return (
     <Wrapper>
       <div className="header">
@@ -52,8 +51,9 @@ export const Wrapper = styled.header`
         &:active {
           color: #000;
         }
-        &:hover,&:active:hover {
-          color: rgb(74,85,104);
+        &:hover,
+        &:active:hover {
+          color: rgb(74, 85, 104);
         }
       }
       &--links {

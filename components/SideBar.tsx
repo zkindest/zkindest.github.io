@@ -6,18 +6,25 @@ const SideBar = () => {
   const [checked, setChecked] = useState(false);
   return (
     <Wrapper>
-      <input name="toggle" type="checkbox" id="toggle" onChange={() => {
-        setChecked((checked) => !checked);
-      }} />
-      <div className={`sidebar__background ${checked ? 'expand' : 'collapse'}`}>
-        <ul id="sidebar__menu" onClick={() => {
-
+      <input
+        name="toggle"
+        type="checkbox"
+        id="toggle"
+        onChange={() => {
           setChecked((checked) => !checked);
-        }}>
-          <Links ></Links>
+        }}
+      />
+      <div className={`sidebar__background ${checked ? "expand" : "collapse"}`}>
+        <ul
+          id="sidebar__menu"
+          onClick={() => {
+            setChecked((checked) => !checked);
+          }}
+        >
+          <Links></Links>
         </ul>
       </div>
-      <label htmlFor="toggle" className={`sidebar__btn ${checked && 'close'}`}>
+      <label htmlFor="toggle" className={`sidebar__btn ${checked && "close"}`}>
         <div className="sidebar__btn--holder">
           <span></span>
           <span></span>

@@ -12,10 +12,11 @@ const Footer: React.FC<Props> = ({ className }) => {
   return (
     <footer className={className}>
       <div className="footer">
-        <AiOutlineCopyright /> 2020-present {" "}
+        <AiOutlineCopyright /> 2020-present{" "}
         <a href={"https://twitter.com/" + twitterUserName || userName}>
           {author}
-        </a>.All Rights Reserved.
+        </a>
+        .All Rights Reserved.
       </div>
     </footer>
   );
