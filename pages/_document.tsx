@@ -6,9 +6,7 @@ import Document, {
   DocumentContext,
 } from "next/document";
 import {
-  COLORS,
   COLOR_MODE_KEY,
-  INITIAL_COLOR_MODE_CSS_PROP,
 } from "@/constants/theme";
 import Terser from "terser";
 import mem from "mem";
@@ -17,9 +15,7 @@ const minify = mem(Terser.minify);
 
 function setColorsByTheme() {
   let colorMode = "light";
-  let colors = "🌈";
   let colorModeKey = "🔑";
-  let colorModeCssProp = "⚡️";
   const persistedColorPreference = window.localStorage.getItem(colorModeKey);
 
   const mql = window.matchMedia("(prefers-color-scheme: dark)");
@@ -31,21 +27,22 @@ function setColorsByTheme() {
     colorMode = hasMediaQueryPreference ? "dark" : "light";
   }
 
-  let root = document.documentElement;
+  let body = document.body;
 
-  root.style.setProperty(colorModeCssProp, colorMode);
-
-  Object.entries(colors).forEach(([name, colorByTheme]) => {
-    const cssVarName = `--clr-${name}`;
-    root.style.setProperty(cssVarName, colorByTheme[colorMode]);
-  });
+  if (colorMode == 'dark') {
+    body.classList.remove('light')
+    body.classList.add('dark')
+  }
+  else {
+    body.classList.remove('dark')
+    body.classList.add('light')
+  }
 }
 
 const MagicScriptTag = () => {
   const boundFn = String(setColorsByTheme)
-    .replace("'🌈'", JSON.stringify(COLORS))
     .replace("🔑", COLOR_MODE_KEY)
-    .replace("⚡️", INITIAL_COLOR_MODE_CSS_PROP);
+
 
   let codeToRunOnClient = `(${boundFn})()`;
 

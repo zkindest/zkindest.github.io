@@ -1,7 +1,5 @@
 /* VARIABLES */
 :root {
-  --clr-purple: #714fb0;
-
   --clr-grey: #777;
   --clr-grey-lightest: #f8dada;
 
@@ -18,16 +16,30 @@
   --clr-grey-5: hsl(210, 22%, 49%);
   --clr-violet-5: hsl(245, 62%, 45%);
   --clr-purple-lightest: hsl(245, 87%, 94%);
-  --radius: .25rem;
+  --radius: 0.25rem;
   --clr-links: #1da7e7;
 
-  /* also used in gatsby-ssr.js */
   --clr-header: #214;
-  --clr-background: #fff;
+}
+body.light {
   --clr-text: #000;
+  --clr-bg: #fff;
+  --clr-toggler-bg: #87ceeb;
   --clr-link-active: #000;
   --clr-show-text: rgb(74, 85, 104);
   --clr-link: darkorange;
+  --inlineCode-text: #1a1a1a;
+  --inlineCode-bg: rgba(255, 229, 100, 0.2);
+}
+body.dark {
+  --clr-text: #eee;
+  --clr-bg: #282c35;
+  --clr-toggler-bg: #000;
+  --clr-link-active: #ccc;
+  --clr-show-text: #ddd;
+  --clr-link: lightsalmon;
+  --inlineCode-text: #e6e6e6;
+  --inlineCode-bg: rgba(115, 124, 153, 0.2);
 }
 
 /* ************
@@ -41,7 +53,6 @@
   box-sizing: border-box;
 }
 
-
 html {
   /* font-size: 16px; (browser default)*/
   /* defines what 1rem is */
@@ -51,23 +62,22 @@ html {
   font-kerning: normal;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
-
 }
 
 body {
-  background: var(--clr-background);
+  background: var(--clr-bg);
   color: var(--clr-text);
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 1.1rem;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
   margin: 0 auto;
-  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Merriweather", "Georgia", serif;
   font-weight: normal;
-  transition: all .2s linear,color 0.3s ease,background-color .3s ease-in;
+  transition: all 0.2s linear, color 0.3s ease, background-color 0.3s ease-in;
   max-width: 860px;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
 }
 
 main {
@@ -85,7 +95,7 @@ main:focus {
 /* LISTS */
 ol li,
 ul li {
-  margin-bottom: .6rem;
+  margin-bottom: 0.6rem;
 }
 
 ol {
@@ -97,31 +107,30 @@ ul {
   margin-top: 0;
 }
 
-
 /* LINKS */
 a {
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 }
 a:not([class]) {
-    text-decoration: none;
-    transition-property: color;
-    transition-duration: .15s;
-    color: var(--clr-link);
-    border-bottom: 1px dotted var(--clr-link);
-    font-weight: 400;
-    text-decoration: none;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: 0.15s;
+  color: var(--clr-link);
+  border-bottom: 1px dotted var(--clr-link);
+  font-weight: 400;
+  text-decoration: none;
 }
 
 a:not([class]):hover {
-  color:var(--clr-link-active);
+  color: var(--clr-link-active);
   border-bottom: 1px solid var(--clr-link-active);
 }
 
-a[class*=active] {
+a[class*="active"] {
   color: var(--clr-show-text);
 }
 
-a[class*=active]:hover{
+a[class*="active"]:hover {
   color: rgb(66, 153, 225);
   text-decoration: underline;
 }
@@ -136,14 +145,12 @@ a.not-active {
 a.post__header {
   color: var(--clr-text);
   text-decoration: none;
-
 }
 a.post__header:hover {
-   text-decoration: underline;
+  text-decoration: underline;
 }
 .collapse {
-
-    transform: translateY(-100%) translateZ(0) !important;
+  transform: translateY(-100%) translateZ(0) !important;
 }
 .expand {
   transform: none;

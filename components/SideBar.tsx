@@ -1,9 +1,16 @@
 import Links from "@/constants/links";
-import React, { useState } from "react";
+import React, { SyntheticEvent, useState } from "react";
 import styled from "styled-components";
 
 const SideBar = () => {
   const [checked, setChecked] = useState(false);
+  const handleClick = (e: SyntheticEvent) => {
+    const target = e.target as HTMLElement;
+
+    if (target.tagName === 'A' || target.tagName === 'BUTTON') {
+      setChecked((checked) => !checked)
+    }
+  }
   return (
     <Wrapper>
       <input
@@ -17,9 +24,7 @@ const SideBar = () => {
       <div className={`sidebar__background ${checked ? "expand" : "collapse"}`}>
         <ul
           id="sidebar__menu"
-          onClick={() => {
-            setChecked((checked) => !checked);
-          }}
+          onClick={handleClick}
         >
           <Links></Links>
         </ul>
@@ -74,7 +79,7 @@ const Wrapper = styled.nav`
     left: 0px;
     width: 100%;
     min-height: 100vh;
-    background: var(--clr-background);
+    background: var(--clr-bg);
     transition: transform 0.3s ease-out;
 
     ul {

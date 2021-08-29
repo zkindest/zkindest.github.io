@@ -6,23 +6,17 @@ const Projects = () => {
       <h2>A few things I've made</h2>
       <ul>
         <li>
-          <a href="https://codepen.io/zkindest/full/qBmOXWO" target="_blank">
+          <a href="https://zkindest.github.io/calculator/" target="_blank">
             Javascript Calculator
           </a>
         </li>
         <li>
-          <a href="https://codepen.io/zkindest/full/ZEKoppW" target="_blank">
+          <a href="https://zkindest.github.io/pomodoro/" target="_blank">
             25+5 Clock
           </a>
-          <ul>
-            <li>
-              I learned about react's batch updates and problems relating
-              setInterval/setTimeout and how prevent to them.
-            </li>
-          </ul>
         </li>
         <li>
-          <a href="https://codepen.io/zkindest/full/XWRZbvb" target="_blank">
+          <a href="http://zkindest.github.io/drum-machine" target="_blank">
             Ally Drum Machine
           </a>
         </li>
@@ -39,24 +33,23 @@ const Projects = () => {
             </li>
           </ul>
         </li>
-        <li>
-          <a
-            href="https://codepen.io/collection/PYqQWY?cursor=ZD0wJm89MCZwPTEmdj00"
-            target="_blank"
-          >
-            Responsive Design Sites
-          </a>
-        </li>
       </ul>
-      <h2>Here are some D3 visualization that I made</h2>
+      <h2>D3 visualizations using d3 core api's</h2>
       <ul>
         <li>
-          <a
-            href="https://codepen.io/collection/ExxyBj?cursor=ZD0wJm89MCZwPTEmdj00"
-            target="_blank"
-          >
-            D3 Viz
-          </a>
+          <a href="https://zkindest.github.io/d3-barchart/">Barchart</a>
+        </li>
+        <li>
+          <a href="https://zkindest.github.io/d3-scatterplot/">scatterplot</a>
+        </li>
+        <li>
+          <a href="https://zkindest.github.io/d3-heatmap/">Heatmap</a>
+        </li>
+        <li>
+          <a href="https://zkindest.github.io/d3-treemap/">Treemap</a>
+        </li>
+        <li>
+          <a href="https://zkindest.github.io/d3-choropleth/">Choropleth</a>
         </li>
       </ul>
       <ul>

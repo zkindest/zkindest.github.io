@@ -7,10 +7,13 @@ const Code: React.FC<CodeProps> = ({ children }) => {
   return (
     <code
       style={{
-        background: "var(--clr-grey-10)",
-        color: "var(--clr-grey-5)",
-        padding: ".5rem",
-        borderRadius: "var(--radius)",
+        background: "var(--inlineCode-bg)",
+        color: "var(--inlineCode-text)",
+        padding: ".1rem .2rem",
+        borderRadius: "2px",
+        lineHeight: ".8",
+        fontSize: ".8rem"
+
       }}
     >
       {children}

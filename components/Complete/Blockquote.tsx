@@ -60,7 +60,7 @@ const Wrapper = styled.blockquote`
       position: absolute;
       top: 15px;
       left: 5px;
-      background: var(--clr-background);
+      background: var(--clr-bg);
       transform: translate(-50%, -50%);
       width: 40px;
       height: 40px;

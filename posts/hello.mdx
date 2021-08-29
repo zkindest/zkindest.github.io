@@ -5,20 +5,19 @@ time_to_read: "3min"
 author: Mohammad Afroz
 # image: "url"
 categories: ["Web"]
-description: about setting up this blog...
+description: Setting up a blog using next.js with mdx capabilities.
 ---
 
 This website has been developed using below Technolgies:
 
 - **[Next.js](https://nextjs.org/docs)** (which is based on React,provides dynamic page routes, SSG, SSR, Font/Image/Script Optimizations and much more)
-- **React** as UI rendering Library
 - **Typescript**
 - **Styled Components** (CSS-in-JS library)
 - **gray-matter** to extract frontMatter and content from mdx files and turn it into a big long string which then parsed by mdx loader.
 
   - `mdx-data-loader.js`
 
-    ```js
+    ```js-ln
     const matter = require("gray-matter");
     const stringifyObject = require("stringify-object");
 
@@ -27,7 +26,7 @@ This website has been developed using below Technolgies:
       const { content, data } = matter(src);
 
       const code = `export const frontMatter = ${stringifyObject(data)}
-      
+
     ${content}`;
 
       return callback(null, code);
@@ -87,27 +86,8 @@ This website has been developed using below Technolgies:
 - **prism-react-renderer** for code blocks.
 - Followed this article on [How to setup DarkMode for Gatsby](https://www.joshwcomeau.com/react/dark-mode/) for dark mode setup.
 
-  - _gatsby-ssr.js_ -> _\_document.js_
-  - `_document.tsx`
-
-    ```jsx
-    export default class MyDocument extends Document {
-      static async getInitialProps(ctx: DocumentContext) {
-        const initialProps = await Document.getInitialProps(ctx);
-        return { ...initialProps };
-      }
-
-      render() {
-        return (
-          <Html lang="en">
-            <Head>/* ...metadata */</Head>
-            <body>
-              <MagicScriptTag />
-              <Main />
-              <NextScript />
-            </body>
-          </Html>
-        );
-      }
-    }
-    ```
+  - The idea is injecting theme changing js code into html at build time.
+  - Js code fetches preferred/persisted colorMode and applies styles accordingly.
+  - Instead of adding css variables to html,we can also add css class to body which is more easier and neat.
+  - `gatsby-ssr.js` is analogous to `_document.js`
+  - full code: [\_document.tsx](https://github.com/zkindest/zkindest.github.io/blob/main/pages/_document.tsx)

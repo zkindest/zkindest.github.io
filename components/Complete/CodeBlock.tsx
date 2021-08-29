@@ -21,7 +21,9 @@ const defaultClassName = "js";
 const PrismWrapper: React.FC<any> = (props) => {
   const { className, metastring } = props.children.props;
 
-  const language = className ? className.split("-")[1] : defaultClassName;
+  const classes = className.split('-');
+  const language = classes.length !== 0 ? classes[1] : defaultClassName;
+  const showLineNumbers = classes[2];
   const shouldHighlightLine = calculateLinesToHighlight(metastring);
 
   return (
@@ -44,7 +46,7 @@ const PrismWrapper: React.FC<any> = (props) => {
               }
               return (
                 <Line key={i} {...lineProps}>
-                  <LineNo>{i + 1}</LineNo>
+                  {showLineNumbers && <LineNo>{i + 1}</LineNo>}
                   <LineContent>
                     {line.map((token, key) => (
                       <span
@@ -65,11 +67,16 @@ const PrismWrapper: React.FC<any> = (props) => {
   );
 };
 const Pre = styled.pre`
+  font-family: Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;
+  font-size: .8rem;
   text-align: left;
-  margin: 1em 0;
-  padding: 0.5em;
+  margin: 1rem -5rem 1rem -3rem;
+  padding: 1rem;
   overflow-x: auto;
   border-radius: var(--radius);
+  @media all and (max-width: 768px) {
+    border-radius: 0;
+  }
 
   .highlight-line {
     background-color: rgb(53, 59, 69);
