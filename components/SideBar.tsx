@@ -7,10 +7,10 @@ const SideBar = () => {
   const handleClick = (e: SyntheticEvent) => {
     const target = e.target as HTMLElement;
 
-    if (target.tagName === 'A' || target.tagName === 'BUTTON') {
-      setChecked((checked) => !checked)
+    if (target.tagName === "A" || target.tagName === "BUTTON") {
+      setChecked((checked) => !checked);
     }
-  }
+  };
   return (
     <Wrapper>
       <input
@@ -22,10 +22,7 @@ const SideBar = () => {
         }}
       />
       <div className={`sidebar__background ${checked ? "expand" : "collapse"}`}>
-        <ul
-          id="sidebar__menu"
-          onClick={handleClick}
-        >
+        <ul id="sidebar__menu" onClick={handleClick}>
           <Links></Links>
         </ul>
       </div>

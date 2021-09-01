@@ -12,8 +12,7 @@ const Code: React.FC<CodeProps> = ({ children }) => {
         padding: ".1rem .2rem",
         borderRadius: "2px",
         lineHeight: ".8",
-        fontSize: ".8rem"
-
+        fontSize: ".8rem",
       }}
     >
       {children}

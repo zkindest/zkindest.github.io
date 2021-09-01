@@ -19,8 +19,7 @@ const Posts: React.FC<PostsProps> = ({ posts, className, title }) => {
         {posts.map((post, index) => {
           return <Post key={index} {...post} />;
         })}
-        {
-          posts.length > 1 &&
+        {posts.length > 1 && (
           <div className="articles__more">
             Check out{" "}
             <Link href="/articles/1">
@@ -28,7 +27,7 @@ const Posts: React.FC<PostsProps> = ({ posts, className, title }) => {
             </Link>{" "}
             for more...
           </div>
-        }
+        )}
       </div>
     </section>
   );

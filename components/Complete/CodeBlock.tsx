@@ -21,7 +21,7 @@ const defaultClassName = "js";
 const PrismWrapper: React.FC<any> = (props) => {
   const { className, metastring } = props.children.props;
 
-  const classes = className.split('-');
+  const classes = className.split("-");
   const language = classes.length !== 0 ? classes[1] : defaultClassName;
   const showLineNumbers = classes[2];
   const shouldHighlightLine = calculateLinesToHighlight(metastring);
@@ -67,11 +67,11 @@ const PrismWrapper: React.FC<any> = (props) => {
   );
 };
 const Pre = styled.pre`
-  font-family: Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;
-  font-size: .8rem;
+  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+  font-size: 0.8rem;
   text-align: left;
   padding: 1rem;
-  margin: 1rem -.5rem 1rem -.5rem;
+  margin: 1rem -0.5rem 1rem -0.5rem;
   overflow: auto;
   border-radius: var(--radius);
   @media all and (max-width: 768px) {

@@ -5,9 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
-import {
-  COLOR_MODE_KEY,
-} from "@/constants/theme";
+import { COLOR_MODE_KEY } from "@/constants/theme";
 import Terser from "terser";
 import mem from "mem";
 
@@ -29,20 +27,17 @@ function setColorsByTheme() {
 
   let body = document.body;
 
-  if (colorMode == 'dark') {
-    body.classList.remove('light')
-    body.classList.add('dark')
-  }
-  else {
-    body.classList.remove('dark')
-    body.classList.add('light')
+  if (colorMode == "dark") {
+    body.classList.remove("light");
+    body.classList.add("dark");
+  } else {
+    body.classList.remove("dark");
+    body.classList.add("light");
   }
 }
 
 const MagicScriptTag = () => {
-  const boundFn = String(setColorsByTheme)
-    .replace("🔑", COLOR_MODE_KEY)
-
+  const boundFn = String(setColorsByTheme).replace("🔑", COLOR_MODE_KEY);
 
   let codeToRunOnClient = `(${boundFn})()`;
 
