@@ -70,9 +70,9 @@ const Pre = styled.pre`
   font-family: Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;
   font-size: .8rem;
   text-align: left;
-  margin: 1rem -5rem 1rem -3rem;
   padding: 1rem;
-  overflow-x: auto;
+  margin: 1rem -.5rem 1rem -.5rem;
+  overflow: auto;
   border-radius: var(--radius);
   @media all and (max-width: 768px) {
     border-radius: 0;

@@ -19,13 +19,16 @@ const Posts: React.FC<PostsProps> = ({ posts, className, title }) => {
         {posts.map((post, index) => {
           return <Post key={index} {...post} />;
         })}
-        <div className="articles__more">
-          Check out{" "}
-          <Link href="/articles/1">
-            <a>Articles</a>
-          </Link>{" "}
-          for more...
-        </div>
+        {
+          posts.length > 1 &&
+          <div className="articles__more">
+            Check out{" "}
+            <Link href="/articles/1">
+              <a>Articles</a>
+            </Link>{" "}
+            for more...
+          </div>
+        }
       </div>
     </section>
   );

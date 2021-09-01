@@ -24,8 +24,6 @@ const Footer: React.FC<Props> = ({ className }) => {
 
 export default styled(Footer)`
   width: 100%;
-  position: absolute;
-  bottom: 0;
   font-size: 0.9em;
 
   .footer {
