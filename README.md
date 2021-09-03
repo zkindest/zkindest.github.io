@@ -23,7 +23,7 @@ yarn run deploy
 1. All Components imported into MDX must be written in `js`.
 1. All React Statements must be separated using empty lines top and bottom.
 
-- ✅
+- :heavy_check_mark: 
 
 ```js
 import Recommend from "@/components/Recommend.js";
