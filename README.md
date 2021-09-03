@@ -2,15 +2,19 @@
 
 ## Development
 
-`yarn run dev`
+```
+yarn run dev
 
-## serve with PWA
+# serve with PWA
+yarn run server
 
-`yarn run server`
+```
 
-## deploy to `gh-pages`
+## deploy using `gh-pages`
 
-`git checkout -b deploy && yarn run deploy`
+```
+yarn run deploy
+```
 
 ## Usage
 
