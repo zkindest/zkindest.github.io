@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
+import { ServerStyleSheet } from "styled-components";
 import { COLOR_MODE_KEY } from "@/constants/theme";
 import Terser from "terser";
 import mem from "mem";
@@ -58,9 +59,33 @@ const MagicScriptTag = () => {
   );
 };
 export default class MyDocument extends Document {
+  // we are interested in static static generation
+  // so,👇(below function) will inject the server side(build time) rendered styles into the <head> to avoid distorted html intial loads
+  // https://styled-components.com/docs/advanced#server-side-rendering
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
   }
 
   render() {
