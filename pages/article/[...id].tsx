@@ -63,10 +63,8 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
             <em>Share Article:</em>&nbsp;
             <a
               href={encodeURI(
-                `https://twitter.com/share?url=${
-                  defaults.baseUrl
-                }/article/${resourceId}&text=${title}&via=${
-                  defaults.twitterUserName || defaults.userName
+                `https://twitter.com/share?url=${defaults.baseUrl
+                }/article/${resourceId}&text=${title}&via=${defaults.twitterUserName || defaults.userName
                 }`
               )}
               target="_blank"
@@ -81,6 +79,7 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
   );
 };
 const Wrapper = styled.article`
+  font-size: 1rem;
   .post__info {
     display: flex;
     align-items: center;

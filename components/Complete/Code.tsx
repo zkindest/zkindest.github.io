@@ -9,7 +9,7 @@ const Code: React.FC<CodeProps> = ({ children }) => {
       style={{
         background: "var(--inlineCode-bg)",
         color: "var(--inlineCode-text)",
-        padding: ".1rem .2rem",
+        padding: ".2rem .2rem",
         borderRadius: "2px",
         lineHeight: ".8",
         fontSize: ".8rem",

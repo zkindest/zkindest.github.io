@@ -1,4 +1,4 @@
-import { Blockquote, Code, Headings, CodeBlock } from "@/components/Complete";
+import { Blockquote, Code, CodeBlock } from "@/components/Complete";
 import Layout from "@/components/Layout";
 import { ThemeProvider } from "@/lib/ThemeContext";
 import { Components, MDXProvider } from "@mdx-js/react";
@@ -7,8 +7,6 @@ import React from "react";
 import "../css/styles.css";
 
 const components: Components = {
-  h3: Headings.myH2,
-  h4: Headings.myH4,
   inlineCode: Code,
   blockquote: Blockquote,
   pre: CodeBlock,

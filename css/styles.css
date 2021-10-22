@@ -22,7 +22,7 @@
   --clr-header: #214;
 }
 body.light {
-  --clr-text: #000;
+  --clr-text: #374151;
   --clr-bg: #fff;
   --clr-toggler-bg: #87ceeb;
   --clr-link-active: #000;
@@ -59,9 +59,11 @@ html {
   /* font-size: 62.5%; */
   font-size: calc(15px + 0.25vw);
   font-style: normal;
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   font-kerning: normal;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 html,
 body {
@@ -78,7 +80,6 @@ body {
   line-height: 1.5;
   font-size: 1.1rem;
   position: relative;
-  font-family: "Merriweather", "Georgia", serif;
   font-weight: normal;
   transition: all 0.2s linear, color 0.3s ease, background-color 0.3s ease-in;
 }
