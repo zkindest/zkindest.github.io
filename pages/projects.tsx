@@ -4,7 +4,7 @@ import React from "react";
 const Projects = () => {
   return (
     <div>
-      <SEO title="Afroz's Projects" description="I do side projects whenever I get free time, It helps me to improve/showcase my skills." image='https://i.imgur.com/L8muD8v.jpg' />
+      <SEO title="Afroz's Projects" description="I do side projects whenever I get free time, It helps me to improve/showcase my skills." image='https://i.imgur.com/L8muD8v.jpg' imageOwnerProfile="https://unsplash.com/@octadan" />
       <h2>Projects</h2>
       <ul>
         <li>
