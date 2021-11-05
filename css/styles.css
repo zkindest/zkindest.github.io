@@ -106,6 +106,11 @@ ol {
   list-style-type: decimal;
 }
 
+ul {
+  padding: 0 1.1rem 1rem;
+  margin-top: 0;
+}
+
 /* LINKS */
 a {
   transition: color 0.2s ease;
