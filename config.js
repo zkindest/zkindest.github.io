@@ -2,7 +2,8 @@ export default {
   title: `Afz`,
   shortName: `Afroz`,
   subtitle: `Web Developer`,
-  description: `I'm Afroz, Fullstack Developer based in Hyderabad,India.`,
+  description: `I'm Afroz, Fullstack Developer based in Hyderabad,India. I have two years of experience in software development, and a passion for Front-End. My work involves a lot of HTML, CSS, and JavaScript/TypeScript (with React), but I also have plenty experience with back-end development and databases.
+`,
   author: `Afroz Mohammad`,
   userName: `zkindest`, //default for all
   gitUserName: `zkindest`, // used for utterances

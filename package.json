@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "server": "yarn build && NODE_ENV=production node server.js",
     "format": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\"",

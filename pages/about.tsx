@@ -22,12 +22,12 @@ const about: React.FC<AboutProps> = ({ className }) => {
 
   return (
     <React.Fragment>
-      <SEO title="About me" />
+      <SEO title="About me" description={description} image={process.env.BACKEND_URL + "static/images/me.jpeg"} />
       <section className={`${className} about`}>
         <article>
           <img
             src={process.env.BACKEND_URL + "static/images/me.jpeg"}
-            alt="Photo of me"
+            alt="Photo of Afroz"
             className="about__img"
           />
           <div className="about__info">
@@ -36,7 +36,10 @@ const about: React.FC<AboutProps> = ({ className }) => {
               <span role="img" aria-label="waving hand emoji">
                 👋
               </span>
-              {description}
+              I'm Afroz, Fullstack Developer based in Hyderabad,India.
+            </p>
+            <p>
+              I have two years of experience in software development, and a passion for Front-End. My work involves a lot of HTML, CSS, and JavaScript/TypeScript (with React), but I also have plenty experience with back-end development and databases.
             </p>
             <p className="about__info--links">
               <a href="https://gitstalk.netlify.app/zkindest" target="_blank">
@@ -60,9 +63,8 @@ const about: React.FC<AboutProps> = ({ className }) => {
                 </a>
               ) : null}
               <a
-                href={`https://www.reddit.com/user/${
-                  redditUserName || userName
-                }`}
+                href={`https://www.reddit.com/user/${redditUserName || userName
+                  }`}
               >
                 <ImReddit />
                 &nbsp;Reddit
@@ -97,7 +99,7 @@ export default styled(about)`
 
     &__info {
       text-align: left;
-      padding-top: 1rem;
+      padding-top: .2rem;
 
       @media all and (max-width: 530px) {
         display: block;
