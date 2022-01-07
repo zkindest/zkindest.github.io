@@ -1,5 +1,4 @@
 import React from "react";
-import { AiOutlineCopyright } from "react-icons/ai";
 import styled from "styled-components";
 import defaults from "@/config";
 
@@ -8,15 +7,12 @@ interface Props {
 }
 
 const Footer: React.FC<Props> = ({ className }) => {
-  const { userName, twitterUserName, author } = defaults;
+  const { codeUrl } = defaults;
   return (
     <footer className={className}>
       <div className="footer">
-        <AiOutlineCopyright /> 2020-present{" "}
-        <a href={"https://twitter.com/" + twitterUserName || userName}>
-          {author}
-        </a>
-        .All Rights Reserved.
+        Built with <a href="https://nextjs.org/" target="_blank" referrerPolicy="no-referrer">Next.js</a>, hosted on <a href={codeUrl} target="_blank" referrerPolicy="no-referrer"
+        >Github</a>
       </div>
     </footer>
   );

@@ -14,5 +14,5 @@ export default {
   twitterId: `2930622986`,
   baseUrl: `http://zkindest.github.io`,
   image: `https://i.imgur.com/8PPjpAD.png`,
-  hostedOn: `Github`,
+  codeUrl: `https://github.com/zkindest/zkindest.github.io`
 };

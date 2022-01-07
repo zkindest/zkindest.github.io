@@ -15,16 +15,22 @@ Just summarizing the techstack I used to built this site. It's a long list!
 Let's start!
 
 ### What is JSX?
+
 HTML like Templating Language but with Javascript powers [introduced](https://reactjs.org/docs/introducing-jsx.html) by React team.
+
 ### What is MDX?
+
 MDX is an authorable format that lets you seamlessly write JSX in your Markdown documents. You can import components, such as interactive charts or alerts, and embed them within your content. This makes writing long-form content with components a blast. 🚀 check [docs](https://mdxjs.com/mdx/) for more info.
+
 ### What are Webpack Loaders?
+
 Loaders work at the individual file level during or before the **bundle** is generated.Check Webpack [loaders](https://webpack.js.org/concepts/loaders/#loader-features) & how to [configure](https://webpack.js.org/concepts/loaders/#configuration).
+
 ### What are Webpack Plugins?
+
 Plugins work at **bundle** or **chunk** level and usually work at the end of the bundle generation process. Plugins can also modify how the bundles themselves are created. Plugins have more powerful control than loaders. Check Webpack [loaders](https://webpack.js.org/concepts/plugins/) & how to [configure](https://webpack.js.org/concepts/plugins/#configuration).
 
 Here's a Stackoverflow [thread](https://stackoverflow.com/questions/37452402/webpack-loaders-vs-plugins-whats-the-difference) to know more about loaders vs plugins.
-
 
 ## Tech stack:
 
@@ -86,7 +92,8 @@ Here's a Stackoverflow [thread](https://stackoverflow.com/questions/37452402/web
     }
 
     ```
-- **babel-plugin-import-glob-array** babel plugin to enable importing modules using a [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)).
+
+- **babel-plugin-import-glob-array** babel plugin to enable importing modules using a [glob pattern](<https://en.wikipedia.org/wiki/Glob_(programming)>).
 
   - `.babelrc`
 
@@ -99,6 +106,7 @@ Here's a Stackoverflow [thread](https://stackoverflow.com/questions/37452402/web
         // ...other plugins
     }
     ```
+
   - I used it to generate list of articles and their frontMatter details like 👇.
 
     ```js
@@ -106,8 +114,8 @@ Here's a Stackoverflow [thread](https://stackoverflow.com/questions/37452402/web
       frontMatter as postFms, // using frontMatter exported by mdx-data-loader
       _importMeta as postMetadatas,
     } from "../posts/*.mdx";
-
     ```
+
 - **next-offline** for offline caching capabilities.
 - **prism-react-renderer** for code blocks.
 - Followed this article on [How to setup DarkMode for Gatsby](https://www.joshwcomeau.com/react/dark-mode/) for dark mode setup.
@@ -117,6 +125,6 @@ Here's a Stackoverflow [thread](https://stackoverflow.com/questions/37452402/web
 
 Here's full [sourcecode](https://github.com/zkindest/zkindest.github.io).
 
-That's it...
+And we are done!
 
 Thank you!

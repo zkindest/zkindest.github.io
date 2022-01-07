@@ -56,7 +56,7 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
               <MdDateRange />
               {date}
             </span>
-            <div className="underline" />
+            <hr />
           </div>
           <MDX></MDX>
           <div className="shareOnTwitter">

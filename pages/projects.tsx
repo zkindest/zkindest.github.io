@@ -1,6 +1,23 @@
 import SEO from "@/components/SEO";
 import React from "react";
 
+interface ListItemProps {
+  label: string;
+  demo: string;
+  code: string;
+}
+const ListItem = ({ label, demo, code }: ListItemProps) => {
+  return (<li>
+    {label} {' '}
+    &mdash; {' '}{
+      demo ? <><a href={demo} referrerPolicy="no-referrer" target="_blank">demo</a>, </> : null
+    }
+    {
+      code ? <a href={code} referrerPolicy="no-referrer" target="_blank">code</a> : null
+    }
+  </li>)
+}
+
 const Projects = () => {
   return (
     <div>
@@ -8,7 +25,21 @@ const Projects = () => {
       <h2>Projects</h2>
       <ul>
         <li>
-          <strong>Game of Life</strong>
+          <details>
+            <summary>Frontend Mentor Challanges</summary>
+            <ol>
+              <ListItem code="https://github.com/zkindest/fe-c1-product-page" demo="https://github.com/zkindest/fe-c1-product-page" label="Commerce Product Page" />
+              <ListItem code="https://github.com/zkindest/fe-c2-launchdown-timer-react" demo="https://zkindest.github.io/fe-c2-launchdown-timer-react/" label="Launchdown Timer" />
+              <ListItem code="https://github.com/zkindest/fe-c3-easybank-site" demo="https://zkindest.github.io/fe-c3-easybank-site/" label="Easybank landing page" />
+              <ListItem code="https://github.com/zkindest/fe-c4-job-listings-react" demo="https://zkindest.github.io/fe-c4-job-listings-react" label="Job Listing" />
+              <ListItem code="https://github.com/zkindest/fe-c5-search-ip-domain" demo="https://zkindest.github.io/fe-c5-search-ip-domain/" label="IP address tracker UI" />
+              <ListItem code="https://github.com/zkindest/fe-c6-search-country" demo="https://zkindest.github.io/fe-c6-search-country/" label="Search Country Details" />
+              <ListItem code="https://github.com/zkindest/fe-c7-bookmark-landing-page" demo="https://zkindest.github.io/fe-c7-bookmark-landing-page/" label="Bookmark Landing Page" />
+            </ol>
+          </details>
+        </li>
+        <li>
+          Game of Life
           <ul>
             <li>
               JavaScript &amp; WASM (rust) &mdash; <a href="https://zkindest.github.io/rust-wa-game-of-life/" target="_blank">demo</a>, <a href="https://github.com/zkindest/rust-wa-game-of-life" target="_blank">code</a>
@@ -40,7 +71,6 @@ const Projects = () => {
           </a> &mdash; <a href="https://github.com/zkindest/drum-machine">code</a>
         </li>
       </ul>
-      And here's my Github <a href="https://github.com/zkindest">profile</a>.
     </div>
   );
 };

@@ -32,11 +32,11 @@ const about: React.FC<AboutProps> = ({ className }) => {
           />
           <div className="about__info">
             <p>
-              Hi,
+              Hi {' '}
               <span role="img" aria-label="waving hand emoji">
-                👋
+                👋 {' '}
               </span>
-              I'm Afroz, Fullstack Developer based in Hyderabad,India.
+              I'm Afroz, Full stack Developer based in Hyderabad, India.
             </p>
             <p>
               I have two years of experience in software development, and a passion for Front-End. My work involves a lot of HTML, CSS, and JavaScript/TypeScript (with React), but I also have plenty experience with back-end development and databases.
