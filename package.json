@@ -1,5 +1,5 @@
 {
-  "name": "with-mdx",
+  "name": "mdx-blog",
   "version": "1.0.1",
   "scripts": {
     "dev": "next",
