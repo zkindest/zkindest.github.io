@@ -28,13 +28,13 @@ const Projects = () => {
           <details>
             <summary>Frontend Mentor Challanges</summary>
             <ol>
-              <ListItem code="https://github.com/zkindest/fe-c1-product-page" demo="https://github.com/zkindest/fe-c1-product-page" label="Commerce Product Page" />
-              <ListItem code="https://github.com/zkindest/fe-c2-launchdown-timer-react" demo="https://zkindest.github.io/fe-c2-launchdown-timer-react/" label="Launchdown Timer" />
-              <ListItem code="https://github.com/zkindest/fe-c3-easybank-site" demo="https://zkindest.github.io/fe-c3-easybank-site/" label="Easybank landing page" />
-              <ListItem code="https://github.com/zkindest/fe-c4-job-listings-react" demo="https://zkindest.github.io/fe-c4-job-listings-react" label="Job Listing" />
-              <ListItem code="https://github.com/zkindest/fe-c5-search-ip-domain" demo="https://zkindest.github.io/fe-c5-search-ip-domain/" label="IP address tracker UI" />
-              <ListItem code="https://github.com/zkindest/fe-c6-search-country" demo="https://zkindest.github.io/fe-c6-search-country/" label="Search Country Details" />
               <ListItem code="https://github.com/zkindest/fe-c7-bookmark-landing-page" demo="https://zkindest.github.io/fe-c7-bookmark-landing-page/" label="Bookmark Landing Page" />
+              <ListItem code="https://github.com/zkindest/fe-c6-search-country" demo="https://zkindest.github.io/fe-c6-search-country/" label="Search Country Details" />
+              <ListItem code="https://github.com/zkindest/fe-c1-product-page" demo="https://zkindest.github.io/fe-c1-product-page/" label="Commerce Product Page" />
+              <ListItem code="https://github.com/zkindest/fe-c2-launchdown-timer-react" demo="https://zkindest.github.io/fe-c2-launchdown-timer-react/" label="Launchdown Timer" />
+              <ListItem code="https://github.com/zkindest/fe-c5-search-ip-domain" demo="https://zkindest.github.io/fe-c5-search-ip-domain/" label="IP address tracker UI" />
+              <ListItem code="https://github.com/zkindest/fe-c4-job-listings-react" demo="https://zkindest.github.io/fe-c4-job-listings-react" label="Job Listing" />
+              <ListItem code="https://github.com/zkindest/fe-c3-easybank-site" demo="https://zkindest.github.io/fe-c3-easybank-site/" label="Easybank landing page" />
             </ol>
           </details>
         </li>
