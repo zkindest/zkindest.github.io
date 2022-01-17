@@ -3,15 +3,16 @@ import React from "react";
 
 interface ListItemProps {
   label: string;
-  demo: string;
+  demo?: string;
   code: string;
 }
 const ListItem = ({ label, demo, code }: ListItemProps) => {
   return (<li>
-    {label} {' '}
-    &mdash; {' '}{
-      demo ? <><a href={demo} referrerPolicy="no-referrer" target="_blank">demo</a>, </> : null
+    {
+      demo ? (<a href={demo} referrerPolicy="no-referrer" target="_blank">{label}</a>
+      ) : label
     }
+    &mdash; {' '}
     {
       code ? <a href={code} referrerPolicy="no-referrer" target="_blank">code</a> : null
     }
@@ -38,20 +39,7 @@ const Projects = () => {
             </ol>
           </details>
         </li>
-        <li>
-          Game of Life
-          <ul>
-            <li>
-              JavaScript &amp; WASM (rust) &mdash; <a href="https://zkindest.github.io/rust-wa-game-of-life/" target="_blank">demo</a>, <a href="https://github.com/zkindest/rust-wa-game-of-life" target="_blank">code</a>
-            </li>
-            <li>
-              JavaScript &mdash; <a href="https://zkindest.github.io/js-game-of-life/" target="_blank">demo</a>, <a href="https://github.com/zkindest/js-game-of-life" target="_blank">code</a>
-            </li>
-            <li>
-              React &mdash; <a href="https://zkindest.github.io/react-game-of-life/" target="_blank">demo</a>, <a href="https://github.com/zkindest/react-game-of-life" target="_blank">code</a>
-            </li>
-          </ul>
-        </li>
+        <ListItem code="https://github.com/zkindest/react-game-of-life" demo="https://zkindest.github.io/react-game-of-life/" label="Game of Life" />
         <li>
           Stack underflow &mdash; <a href="https://github.com/zkindest/stack-underflow-mern-gql" target="_blank">code</a>
         </li>
