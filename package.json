@@ -34,7 +34,7 @@
     "babel-plugin-styled-components": "^1.11.1",
     "express": "^4.17.1",
     "gh-pages": "^3.1.0",
-    "gray-matter": "^4.0.2",
+    "gray-matter": "4.0.3",
     "mem": "^8.0.0",
     "next-offline": "^5.0.3",
     "prettier": "^2.1.2",
