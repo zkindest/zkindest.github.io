@@ -12,10 +12,8 @@ type AboutProps = {
 
 const about: React.FC<AboutProps> = ({ className }) => {
   const {
-    twitterId,
     userName,
     redditUserName,
-    twitterUserName,
     description,
     mail,
   } = defaults;
@@ -50,18 +48,6 @@ const about: React.FC<AboutProps> = ({ className }) => {
                 <HiOutlineMail style={{ marginBottom: "-3px" }}></HiOutlineMail>
                 &nbsp;Email
               </a>
-              {twitterId || twitterUserName ? (
-                <a
-                  href={
-                    twitterId
-                      ? `https://twitter.com/messages/compose?recipient_id=${twitterId}`
-                      : `https://twitter.com/${twitterUserName}`
-                  }
-                >
-                  <FiTwitter style={{ marginBottom: "-3px" }}></FiTwitter>
-                  &nbsp;Twitter
-                </a>
-              ) : null}
               <a
                 href={`https://www.reddit.com/user/${redditUserName || userName
                   }`}
