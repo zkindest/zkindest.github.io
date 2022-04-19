@@ -1,5 +1,4 @@
 import React from "react";
-import { FiTwitter } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
 import { ImReddit } from "react-icons/im";
 import styled from "styled-components";
