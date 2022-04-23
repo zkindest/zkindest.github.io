@@ -1,10 +1,15 @@
-const path = require('path');
-const withOffline = require('next-offline');
+import { resolve, join } from 'path';
+import withOffline from 'next-offline';
+import remarkGfm from 'remark-gfm';
+import * as url from 'url';
 
-module.exports = withOffline({
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
+/**@type  {import('next').NextConfig} */
+export default withOffline({
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-  webpack: (config, { webpack, defaultLoaders }) => {
-    config.resolve.alias['@'] = path.resolve(__dirname, '.');
+  webpack: (config, { defaultLoaders }) => {
+    config.resolve.alias['@'] = resolve(__dirname, '.');
     config.module.rules.push({
       test: /\.mdx?$/,
       use: [
@@ -13,23 +18,18 @@ module.exports = withOffline({
           loader: '@mdx-js/loader',
           /** @type {import('@mdx-js/loader').Options} */
           options: {
-            /* jsxImportSource: …, otherOptions… */
+            providerImportSource: '@mdx-js/react',
+            remarkPlugins: [remarkGfm],
           },
         },
-        path.join(__dirname, './lib/mdx-data-loader'),
+        join(__dirname, './lib/mdx-data-loader'),
       ],
     });
-
-    config.plugins.push(
-      new webpack.DefinePlugin({
-        'process.env.BACKEND_URL': JSON.stringify(''),
-      })
-    );
 
     return config;
   },
   env: {
-    BACKEND_URL:
+    APP_URL:
       process.env.NODE_ENV === 'development'
         ? `http://localhost:3000/`
         : `http://zkindest.github.io/`,
@@ -48,4 +48,5 @@ module.exports = withOffline({
       },
     ],
   },
+  experimental: { esmExternals: true },
 });
