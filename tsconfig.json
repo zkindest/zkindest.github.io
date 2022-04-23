@@ -22,8 +22,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "incremental": true
   },
   "include": ["types", "**/*.ts", "**/*.tsx", "**/*.mdx"],
-  "exclude": ["node_modules", "Projects/*.tsx"]
+  "exclude": ["node_modules"]
 }

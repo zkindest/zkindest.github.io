@@ -25,12 +25,12 @@ const about: React.FC<AboutProps> = ({ className }) => {
       <SEO
         title="About me"
         description={description}
-        image={process.env.BACKEND_URL + 'static/images/me.jpeg'}
+        image={process.env.APP_URL + 'static/images/me.jpeg'}
       />
       <section className={`${className} about`}>
         <article>
           <img
-            src={process.env.BACKEND_URL + 'static/images/me.jpeg'}
+            src={process.env.APP_URL + 'static/images/me.jpeg'}
             alt="Photo of Afroz"
             className="about__img"
           />
