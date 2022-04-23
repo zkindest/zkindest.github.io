@@ -22,40 +22,36 @@ yarn run deploy
 
 1. All Components imported into MDX must be written in `js`.
 2. All React imports must be separated using empty lines top and bottom.
-    <details>
-    <summary>Example</summary>
+   <details>
+   <summary>Example</summary>
 
-    - ❌
+   - ❌
 
-        ```js
+     ```js
+     import Recommend from "@/components/Recommend.js";
+     <Recommend
+       links={[
+         {
+           name: "link-name",
+           slug: "unique-resource-identifier-kind-of",
+         },
+       ]}
+     ></Recommend>;
+     ```
 
-        import Recommend from "@/components/Recommend.js";
-        <Recommend
-          links={[
-            {
-              name: "link-name",
-              slug: "unique-resource-identifier-kind-of",
-            },
-          ]}
-        ></Recommend>;
+   - :heavy_check_mark:
 
-        ```
+     ```js
+     import Recommend from "@/components/Recommend.js";
 
-    - :heavy_check_mark: 
+     <Recommend
+       links={[
+         {
+           name: "link-name",
+           slug: "unique-resource-identifier-kind-of",
+         },
+       ]}
+     ></Recommend>;
+     ```
 
-        ```js
-        import Recommend from "@/components/Recommend.js";
-
-        <Recommend
-          links={[
-            {
-              name: "link-name",
-              slug: "unique-resource-identifier-kind-of",
-            },
-          ]}
-        ></Recommend>;
-        ```
-
-    </details>
-
-
+   </details>

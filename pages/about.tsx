@@ -1,14 +1,14 @@
-import React from "react"
-import { FiTwitter } from "react-icons/fi"
-import { HiOutlineMail } from "react-icons/hi"
-import { ImReddit } from "react-icons/im"
-import styled from "styled-components"
-import SEO from "../components/SEO"
-import defaults from "@/config"
+import React from "react";
+import { FiTwitter } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
+import { ImReddit } from "react-icons/im";
+import styled from "styled-components";
+import SEO from "../components/SEO";
+import defaults from "@/config";
 
 type AboutProps = {
-  className?: string
-}
+  className?: string;
+};
 
 const about: React.FC<AboutProps> = ({ className }) => {
   const {
@@ -18,7 +18,7 @@ const about: React.FC<AboutProps> = ({ className }) => {
     twitterUserName,
     description,
     mail,
-  } = defaults
+  } = defaults;
 
   return (
     <React.Fragment>
@@ -82,8 +82,8 @@ const about: React.FC<AboutProps> = ({ className }) => {
         </article>
       </section>
     </React.Fragment>
-  )
-}
+  );
+};
 
 export default styled(about)`
   width: 100%;
@@ -119,4 +119,4 @@ export default styled(about)`
       }
     }
   }
-`
+`;

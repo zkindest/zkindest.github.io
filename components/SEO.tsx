@@ -40,14 +40,21 @@ const SEO: React.FC<SEOProps> = (props) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       {image && <meta property="og:image" content={image} />}
-      {props.imageOwnerProfile && <meta property="og:image:owner" content={props.imageOwnerProfile} />}
+      {props.imageOwnerProfile && (
+        <meta property="og:image:owner" content={props.imageOwnerProfile} />
+      )}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={defaults.userName} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {image && <meta name="twitter:image" content={image} />}
-      {props.imageOwnerProfile && <meta property="twitter:image:owner" content={props.imageOwnerProfile} />}
+      {props.imageOwnerProfile && (
+        <meta
+          property="twitter:image:owner"
+          content={props.imageOwnerProfile}
+        />
+      )}
     </Head>
   );
 };
