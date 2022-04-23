@@ -1,8 +1,8 @@
-import React from "react";
-import Footer from "./Footer";
-import Header from "./Header";
-import defaults from "@/config";
-import styled from "styled-components";
+import React from 'react';
+import Footer from './Footer';
+import Header from './Header';
+import defaults from '@/config';
+import styled from 'styled-components';
 
 type LayoutProps = {
   children: React.ReactNode;

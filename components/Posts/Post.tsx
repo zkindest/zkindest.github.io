@@ -1,8 +1,8 @@
-import Link from "next/link";
-import React from "react";
-import styled from "styled-components";
-import Tagger from "../Tagger";
-import { MDXItem } from "@/lib/types";
+import Link from 'next/link';
+import React from 'react';
+import styled from 'styled-components';
+import Tagger from '../Tagger';
+import { MDXItem } from '@/lib/types';
 
 const Post: React.FC<MDXItem> = ({ frontMatter, resourceId }) => {
   const { title, categories, description } = frontMatter;
@@ -17,7 +17,7 @@ const Post: React.FC<MDXItem> = ({ frontMatter, resourceId }) => {
         <Tagger categories={categories || []} />
         <p className="post__excerpt">
           {description}
-          <span style={{ display: "inline-block" }}>
+          <span style={{ display: 'inline-block' }}>
             <Link href={`/article/${resourceId}`}>
               <a>Continue Reading&rarr;</a>
             </Link>

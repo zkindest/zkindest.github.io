@@ -1,28 +1,28 @@
-const path = require("path");
-const withOffline = require("next-offline");
+const path = require('path');
+const withOffline = require('next-offline');
 
 module.exports = withOffline({
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   webpack: (config, { webpack, defaultLoaders }) => {
-    config.resolve.alias["@"] = path.resolve(__dirname, ".");
+    config.resolve.alias['@'] = path.resolve(__dirname, '.');
     config.module.rules.push({
       test: /\.mdx?$/,
       use: [
         defaultLoaders.babel,
         {
-          loader: "@mdx-js/loader",
+          loader: '@mdx-js/loader',
           /** @type {import('@mdx-js/loader').Options} */
           options: {
             /* jsxImportSource: …, otherOptions… */
           },
         },
-        path.join(__dirname, "./lib/mdx-data-loader"),
+        path.join(__dirname, './lib/mdx-data-loader'),
       ],
     });
 
     config.plugins.push(
       new webpack.DefinePlugin({
-        "process.env.BACKEND_URL": JSON.stringify(""),
+        'process.env.BACKEND_URL': JSON.stringify(''),
       })
     );
 
@@ -30,7 +30,7 @@ module.exports = withOffline({
   },
   env: {
     BACKEND_URL:
-      process.env.NODE_ENV === "development"
+      process.env.NODE_ENV === 'development'
         ? `http://localhost:3000/`
         : `http://zkindest.github.io/`,
   },
@@ -38,9 +38,9 @@ module.exports = withOffline({
     runtimeCaching: [
       {
         urlPattern: /^https?.*/,
-        handler: "NetworkFirst",
+        handler: 'NetworkFirst',
         options: {
-          cacheName: "offlineCache",
+          cacheName: 'offlineCache',
           expiration: {
             maxEntries: 200,
           },

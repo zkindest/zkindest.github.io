@@ -1,10 +1,10 @@
 import {
   frontMatter as postFms,
   _importMeta as postMetadatas,
-} from "../posts/*.mdx";
-import { MDXItem } from "./types";
+} from '../posts/*.mdx';
+import { MDXItem } from './types';
 
-const MDX_POST_ROOT = "/posts/";
+const MDX_POST_ROOT = '/posts/';
 
 const sortDescPost = (a: MDXItem, b: MDXItem) => {
   const dateA = a.frontMatter.date;
@@ -20,7 +20,7 @@ const sortDescPost = (a: MDXItem, b: MDXItem) => {
 const getResourceId = (metaData: ImportMeta[], index: number) => {
   const absolutePath = metaData[index].absolutePath;
   const relativePath = absolutePath.split(MDX_POST_ROOT).slice(-1)[0];
-  return `${relativePath.split(".").slice(0, -1).join(".")}`;
+  return `${relativePath.split('.').slice(0, -1).join('.')}`;
 };
 
 const getPosts = async () => {
@@ -67,11 +67,11 @@ const getPostsByCategories = async () => {
   postFms.forEach((fm, index) => {
     const absolutePath = postMetadatas[index].absolutePath;
     const relativePath = absolutePath.split(MDX_POST_ROOT).slice(-1)[0];
-    const resourceId = relativePath.split(".").slice(0, -1).join(".");
+    const resourceId = relativePath.split('.').slice(0, -1).join('.');
 
     fm.categories?.forEach((category) => {
       let category_ = category.toLowerCase();
-      if (typeof grouped[category_] == "undefined") {
+      if (typeof grouped[category_] == 'undefined') {
         grouped[category_] = [];
       }
       if (!isInGrouped(resourceId, category_)) {

@@ -1,5 +1,5 @@
-import SEO from "@/components/SEO";
-import React from "react";
+import SEO from '@/components/SEO';
+import React from 'react';
 
 interface ListItemProps {
   label: string;
@@ -16,7 +16,7 @@ const ListItem = ({ label, demo, code }: ListItemProps) => {
       ) : (
         label
       )}
-      &mdash;{" "}
+      &mdash;{' '}
       {code ? (
         <a href={code} referrerPolicy="no-referrer" target="_blank">
           code
@@ -85,7 +85,7 @@ const Projects = () => {
           label="Game of Life"
         />
         <li>
-          Stack underflow &mdash;{" "}
+          Stack underflow &mdash;{' '}
           <a
             href="https://github.com/zkindest/stack-underflow-mern-gql"
             target="_blank"
@@ -96,8 +96,8 @@ const Projects = () => {
         <li>
           <a href="https://zkindest.github.io/calculator/" target="_blank">
             Javascript Calculator
-          </a>{" "}
-          &mdash;{" "}
+          </a>{' '}
+          &mdash;{' '}
           <a href="https://github.com/zkindest/calculator" target="_blank">
             code
           </a>
@@ -105,8 +105,8 @@ const Projects = () => {
         <li>
           <a href="https://zkindest.github.io/pomodoro/" target="_blank">
             25+5 Clock
-          </a>{" "}
-          &mdash;{" "}
+          </a>{' '}
+          &mdash;{' '}
           <a href="https://github.com/zkindest/pomodoro" target="_blank">
             code
           </a>
@@ -114,7 +114,7 @@ const Projects = () => {
         <li>
           <a href="http://zkindest.github.io/drum-machine" target="_blank">
             Ally Drum Machine
-          </a>{" "}
+          </a>{' '}
           &mdash; <a href="https://github.com/zkindest/drum-machine">code</a>
         </li>
       </ul>

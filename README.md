@@ -28,12 +28,12 @@ yarn run deploy
    - ❌
 
      ```js
-     import Recommend from "@/components/Recommend.js";
+     import Recommend from '@/components/Recommend.js';
      <Recommend
        links={[
          {
-           name: "link-name",
-           slug: "unique-resource-identifier-kind-of",
+           name: 'link-name',
+           slug: 'unique-resource-identifier-kind-of',
          },
        ]}
      ></Recommend>;
@@ -42,13 +42,13 @@ yarn run deploy
    - :heavy_check_mark:
 
      ```js
-     import Recommend from "@/components/Recommend.js";
+     import Recommend from '@/components/Recommend.js';
 
      <Recommend
        links={[
          {
-           name: "link-name",
-           slug: "unique-resource-identifier-kind-of",
+           name: 'link-name',
+           slug: 'unique-resource-identifier-kind-of',
          },
        ]}
      ></Recommend>;

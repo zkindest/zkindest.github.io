@@ -1,14 +1,14 @@
-import SEO from "@/components/SEO";
-import mdxUtil from "@/lib/mdx-util";
-import { GetStaticPaths, GetStaticProps } from "next";
-import dynamic from "next/dynamic";
-import React from "react";
-import { AiOutlineClockCircle } from "react-icons/ai";
-import { MdDateRange } from "react-icons/md";
-import styled from "styled-components";
-import defaults from "@/config";
-import ErrorBoundary from "@/components/ErrorBoundary";
-import { useEffect } from "react";
+import SEO from '@/components/SEO';
+import mdxUtil from '@/lib/mdx-util';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import dynamic from 'next/dynamic';
+import React from 'react';
+import { AiOutlineClockCircle } from 'react-icons/ai';
+import { MdDateRange } from 'react-icons/md';
+import styled from 'styled-components';
+import defaults from '@/config';
+import ErrorBoundary from '@/components/ErrorBoundary';
+import { useEffect } from 'react';
 
 interface PostProps {
   resourceId: string;
@@ -18,22 +18,22 @@ interface PostProps {
 const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
   const { title, description, image, date, time_to_read } = frontMatter;
   const MDX = dynamic(() => import(`../../posts/${resourceId}.mdx`), {
-    loading: () => <p style={{ textAlign: "center" }}>Loading...</p>,
+    loading: () => <p style={{ textAlign: 'center' }}>Loading...</p>,
   });
   useEffect(function addUtterance() {
-    const scriptEl = document.createElement("script");
-    const postWrapperEl = document.querySelector(".post__wrapper");
+    const scriptEl = document.createElement('script');
+    const postWrapperEl = document.querySelector('.post__wrapper');
 
-    scriptEl.setAttribute("src", "https://utteranc.es/client.js");
-    scriptEl.setAttribute("crossorigin", "anonymous");
-    scriptEl.setAttribute("async", "true");
+    scriptEl.setAttribute('src', 'https://utteranc.es/client.js');
+    scriptEl.setAttribute('crossorigin', 'anonymous');
+    scriptEl.setAttribute('async', 'true');
     scriptEl.setAttribute(
-      "repo",
+      'repo',
       `${defaults.gitUserName}/${defaults.gitRepoName}`
     );
-    scriptEl.setAttribute("issue-term", "title");
-    scriptEl.setAttribute("theme", "github-light");
-    scriptEl.setAttribute("branch", "main");
+    scriptEl.setAttribute('issue-term', 'title');
+    scriptEl.setAttribute('theme', 'github-light');
+    scriptEl.setAttribute('branch', 'main');
 
     postWrapperEl && postWrapperEl.appendChild(scriptEl);
   }, []);
@@ -104,14 +104,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await mdxUtil.getPosts();
   const paths = posts.map((post) => {
     return {
-      params: { id: post.resourceId.split("/") },
+      params: { id: post.resourceId.split('/') },
     };
   });
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const resourceId = (params?.id as string[]).join("/");
+  const resourceId = (params?.id as string[]).join('/');
   const post = await mdxUtil.getPostByResourcePath(resourceId);
   return {
     props: {

@@ -1,10 +1,10 @@
-import React from "react";
-import { FiTwitter } from "react-icons/fi";
-import { HiOutlineMail } from "react-icons/hi";
-import { ImReddit } from "react-icons/im";
-import styled from "styled-components";
-import SEO from "../components/SEO";
-import defaults from "@/config";
+import React from 'react';
+import { FiTwitter } from 'react-icons/fi';
+import { HiOutlineMail } from 'react-icons/hi';
+import { ImReddit } from 'react-icons/im';
+import styled from 'styled-components';
+import SEO from '../components/SEO';
+import defaults from '@/config';
 
 type AboutProps = {
   className?: string;
@@ -25,20 +25,20 @@ const about: React.FC<AboutProps> = ({ className }) => {
       <SEO
         title="About me"
         description={description}
-        image={process.env.BACKEND_URL + "static/images/me.jpeg"}
+        image={process.env.BACKEND_URL + 'static/images/me.jpeg'}
       />
       <section className={`${className} about`}>
         <article>
           <img
-            src={process.env.BACKEND_URL + "static/images/me.jpeg"}
+            src={process.env.BACKEND_URL + 'static/images/me.jpeg'}
             alt="Photo of Afroz"
             className="about__img"
           />
           <div className="about__info">
             <p>
-              Hi{" "}
+              Hi{' '}
               <span role="img" aria-label="waving hand emoji">
-                👋{" "}
+                👋{' '}
               </span>
               I'm Afroz, Full stack Developer based in Hyderabad, India.
             </p>
@@ -50,11 +50,11 @@ const about: React.FC<AboutProps> = ({ className }) => {
             </p>
             <p className="about__info--links">
               <a href="https://gitstalk.netlify.app/zkindest" target="_blank">
-                <i>stalk me</i>{" "}
+                <i>stalk me</i>{' '}
               </a>
               |&nbsp;<i>reach me:</i>&nbsp;
               <a href={`mailto:${mail}`}>
-                <HiOutlineMail style={{ marginBottom: "-3px" }}></HiOutlineMail>
+                <HiOutlineMail style={{ marginBottom: '-3px' }}></HiOutlineMail>
                 &nbsp;Email
               </a>
               {twitterId || twitterUserName ? (
@@ -65,7 +65,7 @@ const about: React.FC<AboutProps> = ({ className }) => {
                       : `https://twitter.com/${twitterUserName}`
                   }
                 >
-                  <FiTwitter style={{ marginBottom: "-3px" }}></FiTwitter>
+                  <FiTwitter style={{ marginBottom: '-3px' }}></FiTwitter>
                   &nbsp;Twitter
                 </a>
               ) : null}

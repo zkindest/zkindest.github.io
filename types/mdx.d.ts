@@ -14,7 +14,7 @@ interface FrontMatter {
   author?: string;
   description: string;
 }
-declare module "*.mdx" {
+declare module '*.mdx' {
   export const frontMatter: FrontMatter[];
   export const _importMeta: ImportMeta[];
 

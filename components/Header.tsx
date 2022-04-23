@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import Links from "@/constants/links";
-import SideBar from "@/components/SideBar";
-import Link from "next/link";
+import React from 'react';
+import styled from 'styled-components';
+import Links from '@/constants/links';
+import SideBar from '@/components/SideBar';
+import Link from 'next/link';
 
 export type HeaderProps = {
   siteTitle: string;

@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Recommend = ({ links, className }) => {
   return (
@@ -24,7 +24,7 @@ export default styled(Recommend)`
 
     counter-increment: count_recommend 1;
     &::before {
-      content: counters(count_recommend, "decimal-leading-zero") ". ";
+      content: counters(count_recommend, 'decimal-leading-zero') '. ';
     }
   }
 `;

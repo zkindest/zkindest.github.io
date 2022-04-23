@@ -1,13 +1,13 @@
-import Links from "@/constants/links";
-import React, { SyntheticEvent, useState } from "react";
-import styled from "styled-components";
+import Links from '@/constants/links';
+import React, { SyntheticEvent, useState } from 'react';
+import styled from 'styled-components';
 
 const SideBar = () => {
   const [checked, setChecked] = useState(false);
   const handleClick = (e: SyntheticEvent) => {
     const target = e.target as HTMLElement;
 
-    if (target.tagName === "A" || target.tagName === "BUTTON") {
+    if (target.tagName === 'A' || target.tagName === 'BUTTON') {
       setChecked((checked) => !checked);
     }
   };
@@ -21,12 +21,12 @@ const SideBar = () => {
           setChecked((checked) => !checked);
         }}
       />
-      <div className={`sidebar__background ${checked ? "expand" : "collapse"}`}>
+      <div className={`sidebar__background ${checked ? 'expand' : 'collapse'}`}>
         <ul id="sidebar__menu" onClick={handleClick}>
           <Links></Links>
         </ul>
       </div>
-      <label htmlFor="toggle" className={`sidebar__btn ${checked && "close"}`}>
+      <label htmlFor="toggle" className={`sidebar__btn ${checked && 'close'}`}>
         <div className="sidebar__btn--holder">
           <span></span>
           <span></span>
@@ -97,7 +97,7 @@ const Wrapper = styled.nav`
       }
     }
   }
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     display: none;
   }
 
