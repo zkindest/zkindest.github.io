@@ -9,7 +9,13 @@ module.exports = withOffline({
       test: /\.mdx?$/,
       use: [
         defaultLoaders.babel,
-        "@mdx-js/loader",
+        {
+          loader: "@mdx-js/loader",
+          /** @type {import('@mdx-js/loader').Options} */
+          options: {
+            /* jsxImportSource: …, otherOptions… */
+          },
+        },
         path.join(__dirname, "./lib/mdx-data-loader"),
       ],
     });
