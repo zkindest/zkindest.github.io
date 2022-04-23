@@ -11,8 +11,18 @@ const Footer: React.FC<Props> = ({ className }) => {
   return (
     <footer className={className}>
       <div className="footer">
-        Built with <a href="https://nextjs.org/" target="_blank" referrerPolicy="no-referrer">Next.js</a>, hosted on <a href={codeUrl} target="_blank" referrerPolicy="no-referrer"
-        >Github</a>
+        Built with{" "}
+        <a
+          href="https://nextjs.org/"
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
+          Next.js
+        </a>
+        , hosted on{" "}
+        <a href={codeUrl} target="_blank" referrerPolicy="no-referrer">
+          Github
+        </a>
       </div>
     </footer>
   );

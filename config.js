@@ -15,4 +15,4 @@ export default {
   baseUrl: `http://zkindest.github.io`,
   image: `https://i.imgur.com/8PPjpAD.png`,
   codeUrl: `https://github.com/zkindest/zkindest.github.io`,
-}
+};
