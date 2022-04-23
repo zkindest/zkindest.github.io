@@ -1,10 +1,10 @@
-import { Blockquote, Code, CodeBlock } from "@/components/Complete";
-import Layout from "@/components/Layout";
-import { ThemeProvider } from "@/lib/ThemeContext";
-import { Components, MDXProvider } from "@mdx-js/react";
-import App, { AppContext } from "next/app";
-import React from "react";
-import "../css/styles.css";
+import { Blockquote, Code, CodeBlock } from '@/components/Complete';
+import Layout from '@/components/Layout';
+import { ThemeProvider } from '@/lib/ThemeContext';
+import { Components, MDXProvider } from '@mdx-js/react';
+import App, { AppContext } from 'next/app';
+import React from 'react';
+import '../css/styles.css';
 
 const components: Components = {
   inlineCode: Code,

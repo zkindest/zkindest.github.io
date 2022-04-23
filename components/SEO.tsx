@@ -1,6 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import defaults from "@/config";
+import React from 'react';
+import Head from 'next/head';
+import defaults from '@/config';
 type SEOProps = {
   title?: string;
   description?: string;
@@ -11,18 +11,18 @@ type SEOProps = {
 };
 
 const SEO: React.FC<SEOProps> = (props) => {
-  if (defaults.baseUrl === "" && typeof window !== "undefined") {
+  if (defaults.baseUrl === '' && typeof window !== 'undefined') {
     defaults.baseUrl = window.location.origin;
   }
 
-  if (defaults.baseUrl === "") {
-    console.error("Please set a baseUrl in your site metadata!");
+  if (defaults.baseUrl === '') {
+    console.error('Please set a baseUrl in your site metadata!');
     return null;
   }
 
   const title = props.title || defaults.title;
   const description = props.description || defaults.description;
-  const url = new URL(props.path || "", defaults.baseUrl).href;
+  const url = new URL(props.path || '', defaults.baseUrl).href;
   const image = props.image || defaults.image;
 
   return (

@@ -1,10 +1,10 @@
-import Link from "next/link";
-import SEO from "@/components/SEO";
-import mdxUtil from "@/lib/mdx-util";
-import { MDXItem } from "@/lib/types";
-import { GetStaticPaths, GetStaticProps } from "next";
-import React from "react";
-import styled from "styled-components";
+import Link from 'next/link';
+import SEO from '@/components/SEO';
+import mdxUtil from '@/lib/mdx-util';
+import { MDXItem } from '@/lib/types';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import React from 'react';
+import styled from 'styled-components';
 
 type GroupedProps = {
   className: string;
@@ -83,7 +83,7 @@ export default styled(Tagged)`
       counter-increment: count_post 1;
 
       &::before {
-        content: counters(count_post, "decimal-leading-zero") ". ";
+        content: counters(count_post, 'decimal-leading-zero') '. ';
       }
       a {
         display: table-cell;

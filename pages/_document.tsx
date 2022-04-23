@@ -4,41 +4,41 @@ import Document, {
   Main,
   NextScript,
   DocumentContext,
-} from "next/document";
-import { ServerStyleSheet } from "styled-components";
-import { COLOR_MODE_KEY } from "@/constants/theme";
-import Terser from "terser";
-import mem from "mem";
+} from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
+import { COLOR_MODE_KEY } from '@/constants/theme';
+import Terser from 'terser';
+import mem from 'mem';
 
 const minify = mem(Terser.minify);
 
 function setColorsByTheme() {
-  let colorMode = "light";
-  let colorModeKey = "🔑";
+  let colorMode = 'light';
+  let colorModeKey = '🔑';
   const persistedColorPreference = window.localStorage.getItem(colorModeKey);
 
-  const mql = window.matchMedia("(prefers-color-scheme: dark)");
-  const hasMediaQueryPreference = typeof mql.matches === "boolean";
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+  const hasMediaQueryPreference = typeof mql.matches === 'boolean';
 
-  if (typeof persistedColorPreference == "string") {
+  if (typeof persistedColorPreference == 'string') {
     colorMode = persistedColorPreference;
   } else {
-    colorMode = hasMediaQueryPreference ? "dark" : "light";
+    colorMode = hasMediaQueryPreference ? 'dark' : 'light';
   }
 
   let body = document.body;
 
-  if (colorMode == "dark") {
-    body.classList.remove("light");
-    body.classList.add("dark");
+  if (colorMode == 'dark') {
+    body.classList.remove('light');
+    body.classList.add('dark');
   } else {
-    body.classList.remove("dark");
-    body.classList.add("light");
+    body.classList.remove('dark');
+    body.classList.add('light');
   }
 }
 
 const MagicScriptTag = () => {
-  const boundFn = String(setColorsByTheme).replace("🔑", COLOR_MODE_KEY);
+  const boundFn = String(setColorsByTheme).replace('🔑', COLOR_MODE_KEY);
 
   let codeToRunOnClient = `(${boundFn})()`;
 
@@ -48,7 +48,7 @@ const MagicScriptTag = () => {
   }
 
   if (!minifyOutput.code) {
-    throw new Error("Minified code is empty");
+    throw new Error('Minified code is empty');
   }
 
   return (

@@ -1,11 +1,11 @@
-import ErrorBoundary from "@/components/ErrorBoundary";
-import Posts from "@/components/Posts";
-import SEO from "@/components/SEO";
-import { numPostsOnHome } from "@/constants/variables";
-import mdxUtil from "@/lib/mdx-util";
-import { MDXItem } from "@/lib/types";
-import { GetStaticProps } from "next";
-import React from "react";
+import ErrorBoundary from '@/components/ErrorBoundary';
+import Posts from '@/components/Posts';
+import SEO from '@/components/SEO';
+import { numPostsOnHome } from '@/constants/variables';
+import mdxUtil from '@/lib/mdx-util';
+import { MDXItem } from '@/lib/types';
+import { GetStaticProps } from 'next';
+import React from 'react';
 
 type Props = {
   posts: MDXItem[];

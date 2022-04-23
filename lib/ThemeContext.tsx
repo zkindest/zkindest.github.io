@@ -1,5 +1,5 @@
-import React, { useState, useEffect, createContext } from "react";
-import { COLOR_MODE_KEY } from "../constants/theme";
+import React, { useState, useEffect, createContext } from 'react';
+import { COLOR_MODE_KEY } from '../constants/theme';
 
 type ThemeProps = {
   colorMode: string;
@@ -8,10 +8,10 @@ type ThemeProps = {
 
 export const ThemeContext = createContext<ThemeProps>({} as ThemeProps);
 export const ThemeProvider = ({ children }: any) => {
-  const [colorMode, rawSetColorMode] = useState("");
+  const [colorMode, rawSetColorMode] = useState('');
   useEffect(() => {
     const body = window.document.body;
-    rawSetColorMode(body.classList.contains("dark") ? "dark" : "light");
+    rawSetColorMode(body.classList.contains('dark') ? 'dark' : 'light');
   }, []);
 
   const contextValue = React.useMemo(() => {
@@ -25,12 +25,12 @@ export const ThemeProvider = ({ children }: any) => {
       localStorage.setItem(COLOR_MODE_KEY, newValue);
 
       // 3. Update each color
-      if (newValue == "dark") {
-        body.classList.remove("light");
-        body.classList.add("dark");
+      if (newValue == 'dark') {
+        body.classList.remove('light');
+        body.classList.add('dark');
       } else {
-        body.classList.remove("dark");
-        body.classList.add("light");
+        body.classList.remove('dark');
+        body.classList.add('light');
       }
     }
     return {

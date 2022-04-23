@@ -1,13 +1,13 @@
-import ErrorBoundary from "@/components/ErrorBoundary";
-import Navigator from "@/components/Navigator";
-import Post from "@/components/Posts/Post";
-import SEO from "@/components/SEO";
-import { postsPerPage } from "@/constants/variables";
-import mdxUtil from "@/lib/mdx-util";
-import { MDXItem } from "@/lib/types";
-import { GetStaticPaths, GetStaticProps } from "next";
-import React from "react";
-import styled from "styled-components";
+import ErrorBoundary from '@/components/ErrorBoundary';
+import Navigator from '@/components/Navigator';
+import Post from '@/components/Posts/Post';
+import SEO from '@/components/SEO';
+import { postsPerPage } from '@/constants/variables';
+import mdxUtil from '@/lib/mdx-util';
+import { MDXItem } from '@/lib/types';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import React from 'react';
+import styled from 'styled-components';
 
 type PostListProps = {
   posts: MDXItem[];
@@ -22,7 +22,7 @@ const PostList: React.FC<PostListProps> = ({
   numPages,
   currentPage,
 }) => {
-  const pageName = "/articles";
+  const pageName = '/articles';
 
   return (
     <React.Fragment>

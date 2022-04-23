@@ -1,9 +1,9 @@
-import Link from "next/link";
-import SEO from "@/components/SEO";
-import mdxUtil from "@/lib/mdx-util";
-import { GetStaticProps } from "next";
-import React from "react";
-import styled from "styled-components";
+import Link from 'next/link';
+import SEO from '@/components/SEO';
+import mdxUtil from '@/lib/mdx-util';
+import { GetStaticProps } from 'next';
+import React from 'react';
+import styled from 'styled-components';
 
 type TagsProps = {
   className?: string;

@@ -1,5 +1,5 @@
-import React from "react";
-import ErrorPage from "../pages/404";
+import React from 'react';
+import ErrorPage from '../pages/404';
 
 type StateProps = {
   hasError: boolean;

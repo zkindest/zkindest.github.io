@@ -1,8 +1,8 @@
-import React from "react";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import vsDarkTheme from "prism-react-renderer/themes/vsDark";
-import styled from "styled-components";
-import rangeParser from "parse-numeric-range";
+import React from 'react';
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import vsDarkTheme from 'prism-react-renderer/themes/vsDark';
+import styled from 'styled-components';
+import rangeParser from 'parse-numeric-range';
 
 const calculateLinesToHighlight = (meta: string) => {
   const RE = /{([\d,-]+)}/;
@@ -16,12 +16,12 @@ const calculateLinesToHighlight = (meta: string) => {
 };
 
 //USE default JS TEMPLATE
-const defaultClassName = "js";
+const defaultClassName = 'js';
 
 const PrismWrapper: React.FC<any> = (props) => {
   const { className, metastring } = props.children.props;
 
-  const classes = className.split("-");
+  const classes = className.split('-');
   const language = classes.length !== 0 ? classes[1] : defaultClassName;
   const showLineNumbers = classes[2];
   const shouldHighlightLine = calculateLinesToHighlight(metastring);

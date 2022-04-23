@@ -1,6 +1,6 @@
-import React from "react";
-import ActiveLink from "@/components/ActiveLink";
-import Toggle from "@/components/Toggle";
+import React from 'react';
+import ActiveLink from '@/components/ActiveLink';
+import Toggle from '@/components/Toggle';
 
 const Links: React.FC = () => {
   return (

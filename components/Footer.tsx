@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import defaults from "@/config";
+import React from 'react';
+import styled from 'styled-components';
+import defaults from '@/config';
 
 interface Props {
   className?: string;
@@ -11,7 +11,7 @@ const Footer: React.FC<Props> = ({ className }) => {
   return (
     <footer className={className}>
       <div className="footer">
-        Built with{" "}
+        Built with{' '}
         <a
           href="https://nextjs.org/"
           target="_blank"
@@ -19,7 +19,7 @@ const Footer: React.FC<Props> = ({ className }) => {
         >
           Next.js
         </a>
-        , hosted on{" "}
+        , hosted on{' '}
         <a href={codeUrl} target="_blank" referrerPolicy="no-referrer">
           Github
         </a>

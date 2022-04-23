@@ -1,9 +1,9 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
-import Post from "./Post";
-import styled from "styled-components";
-import { MDXItem } from "@/lib/types";
+import Post from './Post';
+import styled from 'styled-components';
+import { MDXItem } from '@/lib/types';
 
 interface PostsProps {
   className?: string;
@@ -21,10 +21,10 @@ const Posts: React.FC<PostsProps> = ({ posts, className, title }) => {
         })}
         {posts.length > 1 && (
           <div className="articles__more">
-            Check out{" "}
+            Check out{' '}
             <Link href="/articles/1">
               <a>Articles</a>
-            </Link>{" "}
+            </Link>{' '}
             for more...
           </div>
         )}
