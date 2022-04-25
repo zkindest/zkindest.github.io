@@ -26,12 +26,12 @@ const about: React.FC<AboutProps> = ({ className }) => {
       <SEO
         title="About me"
         description={description}
-        image={process.env.APP_URL + 'static/images/me.jpeg'}
+        image="v1650875773/blog/me.png"
       />
       <section className={`${className} about`}>
         <div className="about__img-wrapper">
           <Image
-            src={process.env.APP_URL + 'static/images/me.jpeg'}
+            src="v1650875773/blog/me.png"
             alt="Photo of Afroz"
             layout="fill"
             className="about__img"
@@ -46,7 +46,7 @@ const about: React.FC<AboutProps> = ({ className }) => {
         <p>
           I&apos;m Afroz, Full stack Developer based in Hyderabad, India. My
           work involves a lot of HTML, CSS, and JavaScript/TypeScript (with
-          React), but I also have plenty experience with back-end development
+          React), but I also have adequate experience with back-end development
           and databases.
         </p>
         <a

@@ -23,8 +23,7 @@ export const mainProjects: IProject[] = [
     ],
     title: 'Game of Life',
     description: "Conway's game of life(limited universe) using react.",
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/c_scale,h_407,q_80/v1650873048/blog/game-of-life_shctsw.png',
+    image: 'v1650873048/blog/game-of-life_shctsw.png',
     imageAlt:
       'A rectangular shape filled with blue squared tiles with controls at bottom.',
   },
@@ -41,8 +40,7 @@ export const mainProjects: IProject[] = [
     ],
     title: 'Shoppingify',
     description: 'Shopping list management with purchase stats. ',
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/c_scale,h_700,q_60/v1650880389/blog/shoppingify_xtok6h.png',
+    image: 'v1650880389/blog/shoppingify_xtok6h.png',
     imageAlt:
       'A rectangular shape filled with blue squared tiles with controls at bottom.',
   },
@@ -60,8 +58,7 @@ export const mainProjects: IProject[] = [
     title: 'Auths',
     description:
       'To learn how to integrate various OAuth providers with out passport/similar lib.',
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/q_41/v1650882829/blog/auths_nohgxh.png',
+    image: 'v1650882829/blog/auths_nohgxh.png',
     imageAlt: 'A sign up form with blue and white color theme.',
   },
   {
@@ -78,8 +75,7 @@ export const mainProjects: IProject[] = [
     title: 'A Full stack Graphql,React starter',
     description:
       'It includes user authentication flow  based on JWT, refreshTokens and uses React, Graphql, Apollo server, Express, Nexus, React-query, jest, vite, vitest.',
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/q_40/v1650883643/blog/auths_sync_tab_ehtin4.png',
+    image: 'v1650883643/blog/auths_sync_tab_ehtin4.png',
     imageAlt: 'A login form with a dark green button',
   },
 ];
@@ -99,8 +95,7 @@ export const frontEndMentorChallenges: IProject[] = [
     title: 'Bookmark Landing Page',
     description:
       'A Product landing page for a dummy bookmarking app using React,tailwindcss',
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/c_scale,h_407,q_80/v1650874199/blog/bookmark-landing-page_vu8fky.png',
+    image: 'v1650874199/blog/bookmark-landing-page_vu8fky.png',
     imageAlt:
       'A Bookmark landing page Hero section with violet themed button and gray text',
   },
@@ -117,8 +112,7 @@ export const frontEndMentorChallenges: IProject[] = [
     ],
     title: 'Search Country Details',
     description: 'Country details app',
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/c_scale,h_407,q_80/v1650874434/blog/search-country_lsxwwj.webp',
+    image: 'v1650874434/blog/search-country_lsxwwj.webp',
     imageAlt: 'A list of cards with country flags and details',
   },
   {
@@ -134,8 +128,7 @@ export const frontEndMentorChallenges: IProject[] = [
     ],
     title: 'Commerce Product Page',
     description: 'Amazon like product page (Frontend Demo)',
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/c_scale,h_407,q_80/v1650875075/blog/commerce-product-page_wrswox.webp',
+    image: 'v1650875075/blog/commerce-product-page_wrswox.webp',
     imageAlt: 'Amazon like product page (Frontend Demo)',
   },
   {
@@ -151,8 +144,7 @@ export const frontEndMentorChallenges: IProject[] = [
     ],
     title: 'Launchdown Timer',
     description: 'Product launchdown timer with 3d effect',
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/c_scale,h_407,q_80/v1650875073/blog/countdown-timer_bnbesf.webp',
+    image: 'v1650875073/blog/countdown-timer_bnbesf.webp',
     imageAlt: 'Product launchdown timer with 3d effect',
   },
   {
@@ -168,8 +160,7 @@ export const frontEndMentorChallenges: IProject[] = [
     ],
     title: 'IP address tracker UI',
     description: 'Track Location of IP address and websites',
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/c_scale,h_407,q_80/v1650875076/blog/ip-address-tracker_yja9lx.webp',
+    image: 'v1650875076/blog/ip-address-tracker_yja9lx.webp',
     imageAlt: 'A search bar with map at bottom',
   },
 ];
@@ -188,8 +179,7 @@ export const freeCodeCampChallenges: IProject[] = [
     ],
     title: 'Javascript Calculator',
     description: 'An attempt at cloning linux Calculator',
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/c_scale,h_407,q_80/v1650875073/blog/calculator_e5dbbp.webp',
+    image: 'v1650875073/blog/calculator_e5dbbp.webp',
     imageAlt:
       'A rectangular shape with buttons and white background to display information typed by buttons.',
   },
@@ -206,8 +196,7 @@ export const freeCodeCampChallenges: IProject[] = [
     ],
     title: '25+5 Timer',
     description: 'A timer web app',
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/c_scale,h_407,q_80/v1650875073/blog/pomodoro_jze18p.webp',
+    image: 'v1650875073/blog/pomodoro_jze18p.webp',
     imageAlt: 'A timer web app',
   },
   {
@@ -223,8 +212,7 @@ export const freeCodeCampChallenges: IProject[] = [
     ],
     title: 'Ally Drum Machine',
     description: 'Dummy Drum machine',
-    image:
-      'https://res.cloudinary.com/dnuoccwqh/image/upload/c_scale,h_407,q_80/v1650875073/blog/drum-machina_kpusah.jpg',
+    image: 'v1650875073/blog/drum-machina_kpusah.jpg',
     imageAlt:
       'A bunch of rounded square like buttons on left and controls at right with pink and drak gray colors',
   },
