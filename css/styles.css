@@ -72,48 +72,81 @@ h6 {
 
 /* VARIABLES */
 :root {
+  --clr-gray3: hsl(0 0% 95.1%);
+  --clr-gray4: hsl(0 0% 93%);
+  --clr-gray5: hsl(0 0% 90.9%);
   --clr-gray9: hsl(0 0% 56.1%);
   --clr-gray10: hsl(0 0% 52.3%);
   --clr-gray11: hsl(0 0% 43.5%);
-  --clr-grey-lightest: #f8dada;
+  --clr-gray12: hsl(0 0% 9%);
 
-  --clr-green-light: #37af2c;
-  --clr-green-dark: #1f8a15;
+  --clr-slate7: hsl(207 11.1% 85.9%);
+  --clr-slate8: hsl(205 10.7% 78%);
+  --clr-slate9: hsl(206 6% 56.1%);
+  --clr-slate10: hsl(206 5.8% 52.3%);
+  --clr-slate11: hsl(206 6% 43.5%);
+  --clr-slate12: hsl(206 24% 9%);
+
+  --clr-sand8: hsl(51 6% 77.1%);
+  --clr-sand11: hsl(50 2% 43.1%);
+
+  --clr-violet4: hsl(252 91.5% 95.5%);
+  --clr-violet11: hsl(250 43% 48%);
+
+  --clr-sky6: hsl(194 74.1% 79.5%);
+  --clr-sky8: hsl(193 77.9% 53.9%);
+
+  --clr-orange7: hsl(24 100% 75.3%);
+  --clr-orange8: hsl(24 94.5% 64.3%);
+
+  --clr-orange10: hsl(24 100% 46.5%);
+  --clr-orange11: hsl(24 100% 37%);
 
   --main-transition: all 0.1s linear;
+
   --light-shadow: 5px 7px 6px rgba(250, 251, 247, 0.6);
   --dark-shadow: 0 5px 20px rgba(17, 14, 14, 0.2);
 
-  /* COLORS FOR MDX */
-  --clr-grey-10: hsl(206, 33%, 96%);
-  --clr-grey-1: hsl(209, 61%, 16%);
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-violet-5: hsl(245, 62%, 45%);
-  --clr-purple-lightest: hsl(245, 87%, 94%);
-  --radius: 0.25rem;
-  --clr-links: #1da7e7;
+  --clr-elevation: 0, 0, 0;
+  --elevation1: 6.7px 6.7px 1.1px rgba(var(--clr-elevation), 0.004),
+    22.6px 22.3px 3.8px rgba(var(--clr-elevation), 0.006),
+    101px 100px 17px rgba(var(--clr-elevation), 0.01);
+  --elevation2: 8.5px 8.5px 5.3px rgba(var(--clr-elevation), 0.008),
+    24.5px 24.5px 17.9px rgba(var(--clr-elevation), 0.012),
+    100px 100px 80px rgba(var(--clr-elevation), 0.02);
+  --elevation3: 8.5px 8.5px 5.3px rgba(var(--clr-elevation), 0.016),
+    24.5px 24.5px 17.9px rgba(var(--clr-elevation), 0.024),
+    100px 100px 80px rgba(var(--clr-elevation), 0.04);
 
-  --clr-header: #214;
+  --radius: 0.25rem;
 }
 body.light {
-  --clr-text: #374151;
-  --clr-bg: #fff;
-  --clr-toggler-bg: #87ceeb;
-  --clr-link-active: #000;
-  --clr-show-text: rgb(74, 85, 104);
-  --clr-link: darkorange;
-  --inlineCode-text: #1a1a1a;
-  --inlineCode-bg: rgba(255, 229, 100, 0.2);
+  --clr-text: var(--clr-slate12);
+  --clr-bg: white;
+  --clr-toggler-bg: var(--clr-sky6);
+  --clr-show-text: var(--clr-gray11);
+  --clr-link: var(--clr-orange10);
+  --clr-link-active: var(--clr-orange11);
+  --inlineCode-text: var(--clr-gray12);
+  --inlineCode-bg: hsla(var(--clr-sand11), 0.7);
 }
 body.dark {
-  --clr-text: #eee;
-  --clr-bg: #282c35;
-  --clr-toggler-bg: #000;
-  --clr-link-active: #ccc;
-  --clr-show-text: #ddd;
-  --clr-link: lightsalmon;
-  --inlineCode-text: #e6e6e6;
-  --inlineCode-bg: rgba(115, 124, 153, 0.2);
+  --clr-text: var(--clr-gray3);
+  --clr-bg: var(--clr-slate12);
+  --clr-toggler-bg: black;
+  --clr-show-text: var(--clr-gray4);
+  --clr-link: var(--clr-orange7);
+  --clr-link-active: var(--clr-orange10);
+  --inlineCode-text: var(--clr-gray3);
+  --inlineCode-bg: var(--clr-slate12);
+
+  --clr-gray5: hsl(206 6% 43.5%);
+  --clr-gray11: hsl(0 0% 93%);
+
+  --clr-elevation: rgb(80, 80, 80);
+  --elevation1: 6.7px 6.7px 1.1px rgba(var(--clr-elevation), 0.04),
+    22.6px 22.3px 3.8px rgba(var(--clr-elevation), 0.06),
+    100px 100px 17px rgba(var(--clr-elevation), 0.02);
 }
 
 html {
@@ -122,9 +155,7 @@ html {
   /* font-size: 62.5%; */
   font-size: calc(15px + 0.25vw);
   font-style: normal;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: 'Quicksand', sans-serif;
   font-kerning: normal;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
@@ -225,10 +256,25 @@ a.post__header:hover {
   transform: none;
 }
 
+/* Typography */
+
 /* Images */
 p > img {
   max-width: 100%;
   width: fit-content;
   margin: auto;
   display: block;
+}
+
+/* source: https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/ */
+/* Apply the filter directly on the body tag */
+body.dark img {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+/* Or apply it via media query */
+@media (prefers-color-scheme: dark) {
+  img {
+    filter: brightness(0.8) contrast(1.2);
+  }
 }
