@@ -50,6 +50,7 @@ const PrismWrapper: React.FC<any> = (props) => {
                   <LineContent>
                     {line.map((token, key) => (
                       <span
+                        key={key}
                         {...getTokenProps({
                           token,
                           key,
