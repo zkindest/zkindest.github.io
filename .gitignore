@@ -32,8 +32,4 @@ yarn-error.log*
 # vercel
 .vercel
 
-# ignore for now
-pages/projects
-components/Projects
-try
 out/

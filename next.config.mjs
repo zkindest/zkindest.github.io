@@ -50,6 +50,6 @@ export default withOffline({
   },
   experimental: { esmExternals: true },
   images: {
-    domains: ['zkindest.github.io', 'localhost'],
+    domains: ['zkindest.github.io', 'localhost', 'res.cloudinary.com'],
   },
 });
