@@ -94,9 +94,11 @@ const getPostByResourcePath = async (resourceId: string) => {
   return filtered[0];
 };
 
-export default {
+const mdxUtils = {
   getPosts,
   getPostByResourcePath,
   getTags,
   getPostsByCategories,
 };
+
+export default mdxUtils;

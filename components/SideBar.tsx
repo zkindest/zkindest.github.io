@@ -1,10 +1,10 @@
 import Links from '@/constants/links';
-import React, { SyntheticEvent, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const SideBar = () => {
   const [checked, setChecked] = useState(false);
-  const handleClick = (e: SyntheticEvent) => {
+  const handleClick = (e: any) => {
     const target = e.target as HTMLElement;
 
     if (target.tagName === 'A' || target.tagName === 'BUTTON') {

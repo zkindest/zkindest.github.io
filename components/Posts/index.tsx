@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Post from './Post';
 import styled from 'styled-components';
 import { MDXItem } from '@/lib/types';
+import { numPostsOnHome } from '@/constants/variables';
 
 interface PostsProps {
   className?: string;
@@ -19,7 +20,7 @@ const Posts: React.FC<PostsProps> = ({ posts, className, title }) => {
         {posts.map((post, index) => {
           return <Post key={index} {...post} />;
         })}
-        {posts.length > 1 && (
+        {posts.length > numPostsOnHome && (
           <div className="articles__more">
             Check out{' '}
             <Link href="/articles/1">

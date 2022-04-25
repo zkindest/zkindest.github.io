@@ -28,7 +28,7 @@ export default styled(Tagger)`
   margin: 0;
   padding: 0;
   display: flex;
-  /* color: var(--clr-grey); */
+  /* color: var(--clr-gray11); */
 
   li {
     margin: 0;

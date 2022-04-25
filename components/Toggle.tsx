@@ -28,7 +28,7 @@ const Toggle: React.FC = () => {
 export default Toggle;
 
 const ToggleContainer = styled.button<{ lightTheme: boolean }>`
-  border: 2px solid var(--clr-links);
+  border: 2px solid var(--clr-sky8);
   border-radius: 30px;
   cursor: pointer;
   display: flex;

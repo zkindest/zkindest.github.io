@@ -50,10 +50,10 @@ const Wrapper = styled.blockquote`
 
   .container {
     padding: 2rem 1.5rem;
-    background: var(--clr-grey-10);
+    background: var(--clr-gray5);
     border-radius: var(--radius);
-    color: var(--clr-grey-1);
-    border-left: 3px solid var(--clr-grey-5);
+    color: var(--clr-slate12);
+    border-left: 3px solid var(--clr-slate10);
     position: relative;
 
     .icon {
@@ -71,11 +71,11 @@ const Wrapper = styled.blockquote`
   }
 
   .info {
-    background: var(--clr-purple-lightest);
+    background: var(--clr-violet4);
     color: #513c06;
-    border-left: 6px solid var(--clr-violet-5);
+    border-left: 6px solid var(--clr-violet11);
     .icon {
-      color: var(--clr-violet-5);
+      color: var(--clr-violet11);
     }
   }
   .warning {
@@ -95,14 +95,14 @@ const Wrapper = styled.blockquote`
       align-items: center;
     }
     font-style: italic;
-    color: var(--clr-grey-5);
+    color: var(--clr-slate10);
     line-height: 1.8;
     word-spacing: 3px;
     font-size: 1.2rem;
     margin: 2rem 0;
     .quote-icon {
       font-size: 3rem;
-      color: var(--clr-violet-5);
+      color: var(--clr-violet11);
     }
   }
 `;

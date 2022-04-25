@@ -9,6 +9,7 @@ import { ServerStyleSheet } from 'styled-components';
 import { COLOR_MODE_KEY } from '@/constants/theme';
 import Terser from 'terser';
 import mem from 'mem';
+import { Fragment } from 'react';
 
 const minify = mem(Terser.minify);
 
@@ -76,12 +77,13 @@ export default class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        styles: (
-          <>
+        styles: [
+          // see issue: https://github.com/vercel/next.js/issues/36008
+          <Fragment key="1">
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
-        ),
+          </Fragment>,
+        ],
       };
     } finally {
       sheet.seal();
@@ -112,6 +114,17 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#90cdf4" />
           <meta name="apple-mobile-web-app-status-bar" content="#90cdf4" />
+
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+          />
         </Head>
         <body>
           <MagicScriptTag />

@@ -8,12 +8,12 @@ const ErrorPage: React.FC = () => (
     <Wrapper>
       <SEO title="404: Not found" />
       <h1>Oops!</h1>
-      <h3>This is clearly not the page you're looking for.</h3>
+      <h3>This is clearly not the page you&apos;re looking for.</h3>
       <p>
-        Looks like the page you’re looking for does not exist, or the link that
-        got you here is outdated or broken. You may find what you’re looking for
-        in one of the sections available in the menu at the top right of this
-        page.
+        Looks like the page you&apos;re looking for does not exist, or the link
+        that got you here is outdated or broken. You may find what you&apos;re
+        looking for in one of the sections available in the menu at the top
+        right of this page.
       </p>
       <Link href="/">
         <a>Back Home</a>

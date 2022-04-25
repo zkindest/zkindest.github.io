@@ -26,5 +26,5 @@
     "incremental": true
   },
   "include": ["types", "**/*.ts", "**/*.tsx", "**/*.mdx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "Projects/*.tsx"]
 }
