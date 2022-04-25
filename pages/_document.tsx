@@ -112,6 +112,17 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#90cdf4" />
           <meta name="apple-mobile-web-app-status-bar" content="#90cdf4" />
+
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+          />
         </Head>
         <body>
           <MagicScriptTag />
