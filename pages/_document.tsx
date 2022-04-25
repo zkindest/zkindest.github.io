@@ -9,6 +9,7 @@ import { ServerStyleSheet } from 'styled-components';
 import { COLOR_MODE_KEY } from '@/constants/theme';
 import Terser from 'terser';
 import mem from 'mem';
+import { Fragment } from 'react';
 
 const minify = mem(Terser.minify);
 
@@ -76,12 +77,13 @@ export default class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        styles: (
-          <>
+        styles: [
+          // see issue: https://github.com/vercel/next.js/issues/36008
+          <Fragment key="1">
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
-        ),
+          </Fragment>,
+        ],
       };
     } finally {
       sheet.seal();

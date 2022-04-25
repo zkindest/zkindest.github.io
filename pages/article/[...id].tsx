@@ -58,7 +58,7 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
             </span>
             <hr />
           </div>
-          <MDX></MDX>
+          <MDX />
           <div className="shareOnTwitter">
             <em>Share Article:</em>&nbsp;
             <a
@@ -82,6 +82,9 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
 };
 const Wrapper = styled.article`
   font-size: 1rem;
+  p {
+    margin: 1em 0;
+  }
   .post__info {
     display: flex;
     align-items: center;

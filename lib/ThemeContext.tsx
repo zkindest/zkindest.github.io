@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext, ReactNode } from 'react';
 import { COLOR_MODE_KEY } from '../constants/theme';
 
 type ThemeProps = {
@@ -7,7 +7,8 @@ type ThemeProps = {
 };
 
 export const ThemeContext = createContext<ThemeProps>({} as ThemeProps);
-export const ThemeProvider = ({ children }: any) => {
+
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [colorMode, rawSetColorMode] = useState('');
   useEffect(() => {
     const body = window.document.body;
