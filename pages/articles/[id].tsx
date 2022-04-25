@@ -71,9 +71,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const currentPage = parseInt(params?.id as string);
 
   const numPages = Math.ceil(posts.length / postsPerPage);
+
   //posts index starts from 0
   const postsOfCurrentPage = posts.slice(
-    currentPage * postsPerPage - 1,
+    (currentPage - 1) * postsPerPage,
     currentPage * postsPerPage
   );
 
@@ -92,8 +93,10 @@ export default styled(PostList)`
 
   .articles {
     text-align: left;
-    margin: 0 auto;
-    margin-bottom: 4rem;
+    margin: 2rem auto 4rem;
     min-height: 42em;
+  }
+  .articles > * + * {
+    margin-top: 2rem;
   }
 `;

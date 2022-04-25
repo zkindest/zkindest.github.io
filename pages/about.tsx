@@ -5,6 +5,7 @@ import { ImReddit } from 'react-icons/im';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import defaults from '@/config';
+import Image from 'next/image';
 
 type AboutProps = {
   className?: string;
@@ -28,58 +29,56 @@ const about: React.FC<AboutProps> = ({ className }) => {
         image={process.env.APP_URL + 'static/images/me.jpeg'}
       />
       <section className={`${className} about`}>
-        <article>
-          <img
+        <div className="about__img-wrapper">
+          <Image
             src={process.env.APP_URL + 'static/images/me.jpeg'}
             alt="Photo of Afroz"
+            layout="fill"
             className="about__img"
           />
-          <div className="about__info">
-            <p>
-              Hi{' '}
-              <span role="img" aria-label="waving hand emoji">
-                👋{' '}
-              </span>
-              I'm Afroz, Full stack Developer based in Hyderabad, India.
-            </p>
-            <p>
-              I have two years of experience in software development, and a
-              passion for Front-End. My work involves a lot of HTML, CSS, and
-              JavaScript/TypeScript (with React), but I also have plenty
-              experience with back-end development and databases.
-            </p>
-            <p className="about__info--links">
-              <a href="https://gitstalk.netlify.app/zkindest" target="_blank">
-                <i>stalk me</i>{' '}
-              </a>
-              |&nbsp;<i>reach me:</i>&nbsp;
-              <a href={`mailto:${mail}`}>
-                <HiOutlineMail style={{ marginBottom: '-3px' }}></HiOutlineMail>
-                &nbsp;Email
-              </a>
-              {twitterId || twitterUserName ? (
-                <a
-                  href={
-                    twitterId
-                      ? `https://twitter.com/messages/compose?recipient_id=${twitterId}`
-                      : `https://twitter.com/${twitterUserName}`
-                  }
-                >
-                  <FiTwitter style={{ marginBottom: '-3px' }}></FiTwitter>
-                  &nbsp;Twitter
-                </a>
-              ) : null}
-              <a
-                href={`https://www.reddit.com/user/${
-                  redditUserName || userName
-                }`}
-              >
-                <ImReddit />
-                &nbsp;Reddit
-              </a>
-            </p>
-          </div>
-        </article>
+        </div>
+        <h1>
+          Hi{' '}
+          <span role="img" aria-label="waving hand emoji">
+            👋{' '}
+          </span>
+        </h1>
+        <p>
+          I&apos;m Afroz, Full stack Developer based in Hyderabad, India. My
+          work involves a lot of HTML, CSS, and JavaScript/TypeScript (with
+          React), but I also have plenty experience with back-end development
+          and databases.
+        </p>
+        <a
+          href="https://gitstalk.netlify.app/zkindest"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i>stalk me</i>{' '}
+        </a>{' '}
+        &nbsp; or &nbsp;<i>reach me:</i>&nbsp;
+        <div className="about__socials">
+          <a href={`mailto:${mail}`}>
+            <HiOutlineMail style={{ marginBottom: '-3px' }}></HiOutlineMail>
+            &nbsp;Email
+          </a>
+          {twitterId || twitterUserName ? (
+            <a
+              href={
+                twitterId
+                  ? `https://twitter.com/messages/compose?recipient_id=${twitterId}`
+                  : `https://twitter.com/${twitterUserName}`
+              }
+            >
+              <FiTwitter style={{ marginBottom: '-3px' }}></FiTwitter>
+              &nbsp;Twitter
+            </a>
+          ) : null}
+          <a href={`https://www.reddit.com/user/${redditUserName || userName}`}>
+            <ImReddit />
+            &nbsp;Reddit
+          </a>
+        </div>
       </section>
     </React.Fragment>
   );
@@ -90,33 +89,37 @@ export default styled(about)`
   position: relative;
   transition: var(--main-transition);
 
+  p {
+    margin: 2rem 0;
+  }
+  h1 {
+    margin: 2rem 0;
+  }
   .about {
     &__img {
       clip-path: circle(50% at 50% 50%);
       shape-outside: circle(50% at 50% 50%);
-      float: left;
-      width: 10rem;
-      height: 10rem;
-      margin: 0rem 1.2rem;
-      @media all and (max-width: 530px) {
-        float: unset;
-        display: grid;
+      &-wrapper {
+        position: relative;
+        width: 10rem;
+        height: 10rem;
         margin: 0 auto;
+        @media (max-width: 640px) {
+          width: 5rem;
+          height: 5rem;
+        }
       }
     }
 
-    &__info {
-      text-align: left;
-      padding-top: 0.2rem;
-
-      @media all and (max-width: 530px) {
-        display: block;
+    &__socials {
+      margin-left: 1rem;
+      a {
+        display: inline-flex;
+        align-items: center;
       }
-      &--links {
-        a + a {
-          margin-left: 0.5em;
-        }
-      }
+      display: inline-flex;
+      gap: 1rem;
+      align-items: center;
     }
   }
 `;

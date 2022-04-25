@@ -16,11 +16,17 @@ const Footer: React.FC<Props> = ({ className }) => {
           href="https://nextjs.org/"
           target="_blank"
           referrerPolicy="no-referrer"
+          rel="noreferrer"
         >
           Next.js
         </a>
         , hosted on{' '}
-        <a href={codeUrl} target="_blank" referrerPolicy="no-referrer">
+        <a
+          href={codeUrl}
+          target="_blank"
+          referrerPolicy="no-referrer"
+          rel="noreferrer"
+        >
           Github
         </a>
       </div>

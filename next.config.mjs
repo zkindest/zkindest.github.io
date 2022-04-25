@@ -49,4 +49,7 @@ export default withOffline({
     ],
   },
   experimental: { esmExternals: true },
+  images: {
+    domains: ['zkindest.github.io', 'localhost'],
+  },
 });

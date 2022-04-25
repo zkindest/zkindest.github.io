@@ -18,7 +18,7 @@ class ErrorBoundary extends React.Component<{}, StateProps> {
       return <ErrorPage />;
     }
 
-    return this.props.children;
+    return <>{this.props.children}</>;
   }
 }
 export default ErrorBoundary;
