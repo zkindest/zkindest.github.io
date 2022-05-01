@@ -2,7 +2,7 @@ import SEO from '@/components/SEO';
 import mdxUtil from '@/lib/mdx-util';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import dynamic from 'next/dynamic';
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import { MdDateRange } from 'react-icons/md';
 import styled from 'styled-components';
@@ -20,22 +20,27 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
   const MDX = dynamic(() => import(`../../posts/${resourceId}.mdx`), {
     loading: () => <p style={{ textAlign: 'center' }}>Loading...</p>,
   });
+  const postWrapperRef = useRef<HTMLDivElement>(null);
+  const [isUtteranceHooked, setUtteranceHooked] = useState(false);
+
   useEffect(function addUtterance() {
-    const scriptEl = document.createElement('script');
-    const postWrapperEl = document.querySelector('.post__wrapper');
+    if (postWrapperRef.current && !isUtteranceHooked) {
+      const scriptEl = document.createElement('script');
 
-    scriptEl.setAttribute('src', 'https://utteranc.es/client.js');
-    scriptEl.setAttribute('crossorigin', 'anonymous');
-    scriptEl.setAttribute('async', 'true');
-    scriptEl.setAttribute(
-      'repo',
-      `${defaults.gitUserName}/${defaults.gitRepoName}`
-    );
-    scriptEl.setAttribute('issue-term', 'title');
-    scriptEl.setAttribute('theme', 'github-light');
-    scriptEl.setAttribute('branch', 'main');
+      scriptEl.setAttribute('src', 'https://utteranc.es/client.js');
+      scriptEl.setAttribute('crossorigin', 'anonymous');
+      scriptEl.setAttribute('async', 'true');
+      scriptEl.setAttribute(
+        'repo',
+        `${defaults.gitUserName}/${defaults.gitRepoName}`
+      );
+      scriptEl.setAttribute('issue-term', 'title');
+      scriptEl.setAttribute('theme', 'github-light');
+      scriptEl.setAttribute('branch', 'main');
 
-    postWrapperEl && postWrapperEl.appendChild(scriptEl);
+      postWrapperRef.current && postWrapperRef.current.appendChild(scriptEl);
+      setUtteranceHooked(true);
+    }
   }, []);
   return (
     <React.Fragment>
@@ -47,7 +52,7 @@ const Post: React.FC<PostProps> = ({ resourceId, frontMatter }) => {
           path={process.env.BACKEND_URL + `article/${resourceId}`}
           preconnectGitApi={true}
         />
-        <Wrapper className="post__wrapper">
+        <Wrapper className="post__wrapper" ref={postWrapperRef}>
           <div>
             <h1>{title}</h1>
             <span className="post__info">

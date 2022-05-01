@@ -14,17 +14,21 @@ const calculateLinesToHighlight = (meta: string) => {
     return () => false;
   }
 };
+const shouldLineNumbersRender = (meta: string) => {
+  const RE = /line|ln/;
+  return RE.test(meta);
+};
 
 //USE default JS TEMPLATE
 const defaultClassName = 'js';
 
 const PrismWrapper: React.FC<any> = (props) => {
-  const { className, metastring } = props.children.props;
-
-  const classes = className.split('-');
-  const language = classes.length !== 0 ? classes[1] : defaultClassName;
-  const showLineNumbers = classes[2];
-  const shouldHighlightLine = calculateLinesToHighlight(metastring);
+  const { className } = props.children.props;
+  // regex info: see https://stackoverflow.com/questions/4607745/split-string-only-on-first-instance-of-specified-character
+  const [_, fullMeta] = className.split(/-(.*)/s);
+  const [language = defaultClassName, meta] = fullMeta.split(/-(.*)/s);
+  const showLineNumbers = shouldLineNumbersRender(meta);
+  const shouldHighlightLine = calculateLinesToHighlight(meta);
 
   return (
     <Highlight
@@ -35,7 +39,7 @@ const PrismWrapper: React.FC<any> = (props) => {
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
         return (
-          <Pre className={className} style={style}>
+          <Pre className={className} style={style} isNumbered={showLineNumbers}>
             {tokens.map((line, i) => {
               const lineProps = getLineProps({
                 line,
@@ -67,11 +71,11 @@ const PrismWrapper: React.FC<any> = (props) => {
     </Highlight>
   );
 };
-const Pre = styled.pre`
+const Pre = styled.pre<{ isNumbered: boolean }>`
   font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
   font-size: 0.8rem;
   text-align: left;
-  padding: 1rem;
+  padding: ${(props) => (props.isNumbered ? '1rem 0' : '1rem')};
   margin: 1rem -0.5rem 1rem -0.5rem;
   overflow: auto;
   border-radius: var(--radius);
@@ -82,7 +86,6 @@ const Pre = styled.pre`
   .highlight-line {
     background-color: rgb(53, 59, 69);
   }
-
   &::-webkit-scrollbar {
     height: 8px;
   }
@@ -93,13 +96,16 @@ const Pre = styled.pre`
 `;
 
 const Line = styled.div`
-  display: table-row;
+  width: 100%;
+  @media all and (max-width: 768px) {
+    display: table-row;
+  }
 `;
 
 const LineNo = styled.span`
   display: table-cell;
   text-align: right;
-  padding-right: 1em;
+  padding: 0 1em;
   user-select: none;
   opacity: 0.5;
 `;

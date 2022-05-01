@@ -62,7 +62,7 @@ const Wrapper = styled.nav`
         backdrop-filter: invert(200%);
         /* filter: invert(200%); */
         background-color: var(--clr-text);
-        transition: transform 0.4s ease;
+        transition: transform 0.15s ease;
       }
       span:last-of-type {
         top: 5px;
@@ -77,7 +77,7 @@ const Wrapper = styled.nav`
     width: 100%;
     min-height: 100vh;
     background: var(--clr-bg);
-    transition: transform 0.3s ease-out;
+    transition: transform 0.15s ease;
 
     ul {
       padding: 1em;
@@ -108,7 +108,7 @@ const Wrapper = styled.nav`
   }
   .close span:first-child {
     top: 2px;
-    transform: rotate(135deg);
+    transform: rotate(-45deg);
   }
 
   //side bar background animation

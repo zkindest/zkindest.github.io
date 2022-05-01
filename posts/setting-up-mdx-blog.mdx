@@ -1,10 +1,10 @@
 ---
-title: "Setting up MDX Blog"
-date: "2021-08-24"
-time_to_read: "3min"
+title: 'Setting up MDX Blog'
+date: '2021-08-24'
+time_to_read: '3min'
 author: Mohammad Afroz
 # image: "url"
-categories: ["Web"]
+categories: ['Web']
 description: Setting up a blog using next.js with MDX capabilities.
 ---
 
@@ -28,7 +28,7 @@ Loaders work at the individual file level during or before the **bundle** is gen
 
 ### What are Webpack Plugins?
 
-Plugins work at **bundle** or **chunk** level and usually work at the end of the bundle generation process. Plugins can also modify how the bundles themselves are created. Plugins have more powerful control than loaders. Check Webpack [loaders](https://webpack.js.org/concepts/plugins/) & how to [configure](https://webpack.js.org/concepts/plugins/#configuration).
+Plugins work at **bundle** or **chunk** level and usually work at the end of the bundle generation process. Plugins can also modify how the bundles themselves are created. Check Webpack [loaders](https://webpack.js.org/concepts/plugins/) & how to [configure](https://webpack.js.org/concepts/plugins/#configuration).
 
 Here's a Stackoverflow [thread](https://stackoverflow.com/questions/37452402/webpack-loaders-vs-plugins-whats-the-difference) to know more about loaders vs plugins.
 
@@ -41,7 +41,7 @@ Here's a Stackoverflow [thread](https://stackoverflow.com/questions/37452402/web
 
   - `lib/mdx-data-loader.js`
 
-    ```js-ln
+    ```js-ln,{8-10}
     const matter = require("gray-matter");
     const stringifyObject = require("stringify-object");
 
@@ -49,10 +49,9 @@ Here's a Stackoverflow [thread](https://stackoverflow.com/questions/37452402/web
       const callback = this.async();
       const { content, data } = matter(src);
 
-      // exporting frontMatter
+      // exporting frontMatter variable
       const code = `export const frontMatter = ${stringifyObject(data)}
-
-    ${content}`;
+      ${content}`;
 
       return callback(null, code);
     };
@@ -67,13 +66,13 @@ Here's a Stackoverflow [thread](https://stackoverflow.com/questions/37452402/web
       // ...other config
 
       webpack: (config, { webpack, defaultLoaders }) => {
-        config.resolve.alias["@"] = path.resolve(__dirname, ".");
+        config.resolve.alias['@'] = path.resolve(__dirname, '.');
         config.module.rules.push({
           test: /\.mdx?$/,
           use: [
             defaultLoaders.babel, // includes next.js default babel conf/loaders
-            "@mdx-js/loader", // turn mdx in to Javascript and map js-components to HTML elements based on Markdown syntax
-            path.join(__dirname, "./lib/mdx-data-loader"), // extract frontMatter from mdx
+            '@mdx-js/loader', // turn mdx in to Javascript and map js-components to HTML elements based on Markdown syntax
+            path.join(__dirname, './lib/mdx-data-loader'), // extract frontMatter from mdx
           ],
         });
         return config;
@@ -109,11 +108,11 @@ Here's a Stackoverflow [thread](https://stackoverflow.com/questions/37452402/web
 
   - I used it to generate list of articles and their frontMatter details like 👇.
 
-    ```js
+    ```js-{2}
     import {
       frontMatter as postFms, // using frontMatter exported by mdx-data-loader
       _importMeta as postMetadatas,
-    } from "../posts/*.mdx";
+    } from '../posts/*.mdx';
     ```
 
 - **next-offline** for offline caching capabilities.
