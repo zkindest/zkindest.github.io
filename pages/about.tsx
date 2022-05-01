@@ -44,7 +44,7 @@ const about: React.FC<AboutProps> = ({ className }) => {
           </span>
         </h1>
         <p>
-          I&apos;m Afroz, Full stack Developer based in Hyderabad, India. My
+          I&apos;m Afroz, Frontend developer based in Hyderabad, India. My
           work involves a lot of HTML, CSS, and JavaScript/TypeScript (with
           React), but I also have adequate experience with back-end development
           and databases.
