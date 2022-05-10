@@ -48,6 +48,23 @@ export const mainProjects: IProject[] = [
     links: [
       {
         type: 'github',
+        url: 'https://github.com/zkindest/suf-mern-gql-frontend',
+      },
+      {
+        type: 'other',
+        url: 'https://zkindest.github.io/suf-mern-gql-frontend/',
+      },
+    ],
+    title: 'stack-underflow',
+    description: 'A Stack overflow like single page app',
+    image: 'v1652195930/blog/stackunderflow_zzrakk.png',
+    imageAlt:
+      'Three sections in row with first one with Menu items,second with questions list and third with tags and their count.',
+  },
+  {
+    links: [
+      {
+        type: 'github',
         url: 'https://github.com/zkindest/dc-auth',
       },
       {
