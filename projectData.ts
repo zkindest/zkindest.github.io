@@ -56,7 +56,7 @@ export const mainProjects: IProject[] = [
       },
     ],
     title: 'stack-underflow',
-    description: 'A Stack overflow like single page app',
+    description: 'Stackoverflow like single page app using html,css,js with no UI library.',
     image: 'v1652195930/blog/stackunderflow_zzrakk.png',
     imageAlt:
       'Three sections in row with first one with Menu items,second with questions list and third with tags and their count.',
