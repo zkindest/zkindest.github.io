@@ -31,6 +31,24 @@ export const mainProjects: IProject[] = [
     links: [
       {
         type: 'github',
+        url: 'https://github.com/zkindest/suf-mern-gql-frontend',
+      },
+      {
+        type: 'other',
+        url: 'https://suf-mern-gql-frontend.vercel.app/',
+      },
+    ],
+    title: 'Stack Underflow',
+    description:
+      "A web app basically similar to Stack Overflow using Next.js's SSR + CSR.",
+    image: 'v1652195930/blog/stackunderflow_zzrakk.png',
+    imageAlt:
+      'Three sections in row with first one with Menu items,second with questions list and third with tags and their count.',
+  },
+  {
+    links: [
+      {
+        type: 'github',
         url: 'https://github.com/zkindest/shoppingify',
       },
       {
@@ -43,23 +61,6 @@ export const mainProjects: IProject[] = [
     image: 'v1650880389/blog/shoppingify_xtok6h.png',
     imageAlt:
       'A rectangular shape filled with blue squared tiles with controls at bottom.',
-  },
-  {
-    links: [
-      {
-        type: 'github',
-        url: 'https://github.com/zkindest/suf-mern-gql-frontend',
-      },
-      {
-        type: 'other',
-        url: 'https://zkindest.github.io/suf-mern-gql-frontend/',
-      },
-    ],
-    title: 'stack-underflow',
-    description: 'Stackoverflow like single page app using react with no UI library.',
-    image: 'v1652195930/blog/stackunderflow_zzrakk.png',
-    imageAlt:
-      'Three sections in row with first one with Menu items,second with questions list and third with tags and their count.',
   },
   {
     links: [
