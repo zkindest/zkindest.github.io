@@ -25,12 +25,12 @@ const Projects = () => {
         <h2>Other Projects</h2>
         <ul>
           <li>
-            <Link href="/projects/fec">
+            <Link href="/projects/fec" scroll={true}>
               <a>Frontend Mentor Challenges</a>
             </Link>
           </li>
           <li>
-            <Link href="/projects/fcc">
+            <Link href="/projects/fcc" scroll={true}>
               <a>Free code camp Frontend Challenges</a>
             </Link>
           </li>

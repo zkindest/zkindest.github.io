@@ -103,6 +103,22 @@ export const frontEndMentorChallenges: IProject[] = [
     links: [
       {
         type: 'github',
+        url: 'https://github.com/zkindest/fe-c5-search-ip-domain',
+      },
+      {
+        type: 'other',
+        url: 'https://zkindest.github.io/fe-c5-search-ip-domain/',
+      },
+    ],
+    title: 'IP address tracker UI',
+    description: 'Track Location of IP address and websites.',
+    image: 'v1650875076/blog/ip-address-tracker_yja9lx.webp',
+    imageAlt: 'A search bar with map at bottom',
+  },
+  {
+    links: [
+      {
+        type: 'github',
         url: 'https://github.com/zkindest/fe-c7-bookmark-landing-page',
       },
       {
@@ -117,22 +133,7 @@ export const frontEndMentorChallenges: IProject[] = [
     imageAlt:
       'A Bookmark landing page Hero section with violet themed button and gray text',
   },
-  {
-    links: [
-      {
-        type: 'github',
-        url: 'https://github.com/zkindest/fe-c6-search-country',
-      },
-      {
-        type: 'other',
-        url: 'https://zkindest.github.io/fe-c6-search-country/',
-      },
-    ],
-    title: 'Search Country Details',
-    description: 'A basic country details app.',
-    image: 'v1650874434/blog/search-country_lsxwwj.webp',
-    imageAlt: 'A list of cards with country flags and details',
-  },
+
   {
     links: [
       {
@@ -169,17 +170,17 @@ export const frontEndMentorChallenges: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/zkindest/fe-c5-search-ip-domain',
+        url: 'https://github.com/zkindest/fe-c6-search-country',
       },
       {
         type: 'other',
-        url: 'https://zkindest.github.io/fe-c5-search-ip-domain/',
+        url: 'https://zkindest.github.io/fe-c6-search-country/',
       },
     ],
-    title: 'IP address tracker UI',
-    description: 'Track Location of IP address and websites.',
-    image: 'v1650875076/blog/ip-address-tracker_yja9lx.webp',
-    imageAlt: 'A search bar with map at bottom',
+    title: 'Search Country Details',
+    description: 'A basic country details app.',
+    image: 'v1650874434/blog/search-country_lsxwwj.webp',
+    imageAlt: 'A list of cards with country flags and details',
   },
 ];
 
