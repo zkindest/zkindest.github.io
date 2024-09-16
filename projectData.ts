@@ -14,11 +14,11 @@ export const mainProjects: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/react-game-of-life',
+        url: 'https://github.com/af4oz/react-game-of-life',
       },
       {
         type: 'other',
-        url: 'https://0xafz.github.io/react-game-of-life/',
+        url: 'https://af4oz.github.io/react-game-of-life/',
       },
     ],
     title: 'Game of Life',
@@ -31,11 +31,7 @@ export const mainProjects: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/suf-mern-gql-frontend',
-      },
-      {
-        type: 'other',
-        url: 'https://suf-mern-gql-frontend.vercel.app/',
+        url: 'https://github.com/af4oz/suf-mern-gql-frontend',
       },
     ],
     title: 'Stack Underflow',
@@ -49,11 +45,7 @@ export const mainProjects: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/shoppingify',
-      },
-      {
-        type: 'other',
-        url: 'https://shoppingify.vercel.app/',
+        url: 'https://github.com/af4oz/shoppingify',
       },
     ],
     title: 'Shoppingify',
@@ -66,11 +58,7 @@ export const mainProjects: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/dc-auth',
-      },
-      {
-        type: 'other',
-        url: 'https://auths.vercel.app/',
+        url: 'https://github.com/af4oz/dc-auth',
       },
     ],
     title: 'Auths',
@@ -83,11 +71,7 @@ export const mainProjects: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/starter-fullstack-graphql-rq',
-      },
-      {
-        type: 'other',
-        url: 'https://0xafz.github.io/starter-fullstack-graphql-rq/',
+        url: 'https://github.com/af4oz/starter-fullstack-graphql-rq',
       },
     ],
     title: 'A Full stack Graphql,React starter',
@@ -103,11 +87,11 @@ export const frontEndMentorChallenges: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/fe-c5-search-ip-domain',
+        url: 'https://github.com/af4oz/fe-c5-search-ip-domain',
       },
       {
         type: 'other',
-        url: 'https://0xafz.github.io/fe-c5-search-ip-domain/',
+        url: 'https://af4oz.github.io/fe-c5-search-ip-domain/',
       },
     ],
     title: 'IP address tracker UI',
@@ -119,11 +103,11 @@ export const frontEndMentorChallenges: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/fe-c7-bookmark-landing-page',
+        url: 'https://github.com/af4oz/fe-c7-bookmark-landing-page',
       },
       {
         type: 'other',
-        url: 'https://0xafz.github.io/fe-c7-bookmark-landing-page/',
+        url: 'https://af4oz.github.io/fe-c7-bookmark-landing-page/',
       },
     ],
     title: 'Bookmark Landing Page',
@@ -138,11 +122,11 @@ export const frontEndMentorChallenges: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/fe-c1-product-page',
+        url: 'https://github.com/af4oz/fe-c1-product-page',
       },
       {
         type: 'other',
-        url: 'https://0xafz.github.io/fe-c1-product-page/',
+        url: 'https://af4oz.github.io/fe-c1-product-page/',
       },
     ],
     title: 'Commerce Product Page',
@@ -154,33 +138,17 @@ export const frontEndMentorChallenges: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/fe-c2-launchdown-timer-react',
+        url: 'https://github.com/af4oz/fe-c2-launchdown-timer-react',
       },
       {
         type: 'other',
-        url: 'https://0xafz.github.io/fe-c2-launchdown-timer-react/',
+        url: 'https://af4oz.github.io/fe-c2-launchdown-timer-react/',
       },
     ],
     title: 'Launchdown Timer',
     description: 'Product launchdown timer with 3d effect.',
     image: 'v1650875073/blog/countdown-timer_bnbesf.webp',
     imageAlt: 'Product launchdown timer with 3d effect',
-  },
-  {
-    links: [
-      {
-        type: 'github',
-        url: 'https://github.com/0xafz/fe-c6-search-country',
-      },
-      {
-        type: 'other',
-        url: 'https://0xafz.github.io/fe-c6-search-country/',
-      },
-    ],
-    title: 'Search Country Details',
-    description: 'A basic country details app.',
-    image: 'v1650874434/blog/search-country_lsxwwj.webp',
-    imageAlt: 'A list of cards with country flags and details',
   },
 ];
 
@@ -189,11 +157,11 @@ export const freeCodeCampChallenges: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/calculator',
+        url: 'https://github.com/af4oz/calculator',
       },
       {
         type: 'other',
-        url: 'https://0xafz.github.io/calculator/',
+        url: 'https://af4oz.github.io/calculator/',
       },
     ],
     title: 'Javascript Calculator',
@@ -206,11 +174,11 @@ export const freeCodeCampChallenges: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/pomodoro',
+        url: 'https://github.com/af4oz/pomodoro',
       },
       {
         type: 'other',
-        url: 'https://0xafz.github.io/pomodoro/',
+        url: 'https://af4oz.github.io/pomodoro/',
       },
     ],
     title: '25+5 Timer',
@@ -222,11 +190,11 @@ export const freeCodeCampChallenges: IProject[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/0xafz/drum-machine',
+        url: 'https://github.com/af4oz/drum-machine',
       },
       {
         type: 'other',
-        url: 'http://0xafz.github.io/drum-machine',
+        url: 'http://af4oz.github.io/drum-machine',
       },
     ],
     title: 'Ally Drum Machine',

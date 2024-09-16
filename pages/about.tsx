@@ -50,7 +50,7 @@ const about: React.FC<AboutProps> = ({ className }) => {
           databases.
         </p>
         <a
-          href="https://gitstalk.netlify.app/0xafz"
+          href="https://gitstalk.netlify.app/af4oz"
           target="_blank"
           rel="noreferrer"
         >
@@ -74,10 +74,14 @@ const about: React.FC<AboutProps> = ({ className }) => {
               &nbsp;Twitter
             </a>
           ) : null}
-          <a href={`https://www.reddit.com/user/${redditUserName || userName}`}>
+          {
+            redditUserName ? (
+<a href={`https://www.reddit.com/user/${redditUserName || userName}`}>
             <ImReddit />
             &nbsp;Reddit
           </a>
+            ) : null
+          }
         </div>
       </section>
     </React.Fragment>

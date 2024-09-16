@@ -32,7 +32,7 @@ export default withOffline({
     APP_URL:
       process.env.NODE_ENV === 'development'
         ? `http://localhost:3000/`
-        : `http://0xafz.github.io/`,
+        : `http://af4oz.github.io/`,
   },
   workboxOpts: {
     runtimeCaching: [

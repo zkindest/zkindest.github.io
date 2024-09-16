@@ -31,7 +31,7 @@ const Projects = () => {
           </li>
           <li>
             <Link href="/projects/fcc" scroll={true}>
-              <a>Free code camp Frontend Challenges</a>
+              <a>FreeCodeCamp Frontend Challenges</a>
             </Link>
           </li>
         </ul>
